@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="kk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Тақырыптар</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: #f3f3f3;
+            margin: 0;
+            padding: 20px;
+            color: #333;
+        }
+        h1 {
+            text-align: center;
+            color: #0f172a;
+            font-size: 36px;
+            margin-bottom: 40px;
+            text-transform: uppercase;
+        }
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(3, 1fr); /* 3 колонка */
+            gap: 30px; /* кнопкалар арасындағы қашықтық */
+        }
+        .button {
+            background-size: cover;
+            color: black;
+            text-align: center;
+            padding: 70px 70px; /* кнопкалардың өлшемін үлкейту */
+            border-radius: 10px;
+            text-decoration: none;
+            font-size: 23px; /* шрифт өлшемін үлкейту */
+            font-weight: bold;
+            transition: transform 0.3s, box-shadow 0.3s, opacity 0.3s;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            opacity: 0.8; /* фонның мөлдірлігі */
+            background-color: rgba(0, 0, 0, 0.2); /* 70% мөлдірлік */
+        }
+        .button:hover {
+            transform: scale(1.1); /* кнопканы үлкейту */
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+            opacity: 1;
+        }
+        /* Әр кнопкаға әр түрлі фон суреттерін қосу */
+        .button:nth-child(1) {
+            background-image: url('practice_main/пр1.jpg');
+        }
+        .button:nth-child(2) {
+            background-image: url('practice_main/пр2.jpg');
+        }
+        .button:nth-child(3) {
+            background-image: url('practice_main/пр3.jpg');
+        }
+        .button:nth-child(4) {
+            background-image: url('practice_main/пр4.jpg');
+        }
+        .button:nth-child(5) {
+            background-image: url('practice_main/пр5.jpg');
+        }
+        .button:nth-child(6) {
+            background-image: url('practice_main/пр6.jpg');
+        }
+    </style>
+</head>
+<body>
+    <h1>Тақырыптар</h1>
+    <div class="container">
+        <a href="1practice.html" class="button">1. Цилиндр және оның элементтері</a>
+        <a href="2practice.html" class="button">2. Цилиндр бетінің ауданы</a>
+        <a href="3practice.html" class="button">3. Конус және оның элементтері</a>
+        <a href="4practice.html" class="button">4. Конус бетінің ауданы</a>
+        <a href="5practice.html" class="button">5. Қиық конус және оның элементтері</a>
+        <a href="6practice.html" class="button">6. Қиық конус бетінің ауданы</a>
+    </div>
+</body>
+</html>

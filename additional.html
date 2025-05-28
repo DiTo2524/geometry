@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="kk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Тапсырма тексеру</title>
+<style>
+        /* Жалпы стильдер */
+        body {
+            font-family: Centro Sans pro;
+            font-weight: bold;
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(135deg, #ffffff, #ffffff);
+            color: #333;
+        }
+
+        .container {
+            max-width: 1400px;
+            margin: 30px auto;
+            padding: 20px;
+            background: #ffffff;
+            border-radius: 10px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        h1 {
+            font-size: 32px;
+            text-align: center;
+            margin-bottom: 20px;
+            color: #1a202c;
+        }
+
+        .task {
+            background: #b9e0f5;
+            border: 1px solid #e2e8f0;
+            padding: 25px;
+            margin-bottom: 40px;
+            border-radius: 8px;
+            box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.05);
+        }
+
+        .task p {
+            font-size: 18px;
+            margin-bottom: 10px;
+            color: #2d3748;
+        }
+        #scrollTopBtn {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            z-index: 99;
+            font-size: 24px;
+            background: linear-gradient(135deg, #dca20f, #d7740a);
+            color: white;
+            border: none;
+            border-radius: 50%;
+            width: 60px;
+            height: 60px;
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+            cursor: pointer;
+            display: none;
+            transition: all 0.3s ease;
+            text-align: center;
+            line-height: 20px; /* Мәтін ортасына келеді */
+        }
+
+
+        #scrollTopBtn:hover {
+            background: linear-gradient(135deg, #dca20f, #d7740a);
+            transform: scale(1.1);
+        }
+        input {
+            width: calc(100% - 20px);
+            padding: 10px;
+            font-size: 16px;
+            border: 1px solid #cbd5e0;
+            border-radius: 5px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            transition: all 0.2s ease-in-out;
+        }
+
+        input:focus {
+            border-color: #3182ce;
+            box-shadow: 0 0 5px rgba(49, 130, 206, 0.5);
+            outline: none;
+        }
+
+        button {
+            display: block;
+            width: 100%;
+            padding: 12px;
+            font-size: 18px;
+            font-weight: bold;
+            background: #3182ce;
+            color: #ffffff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background 0.3s ease;
+        }
+
+        button:hover {
+            background: #2b6cb0;
+        }
+
+        
+        .feedback {
+    margin-top: 10px;
+    font-weight: bold;
+        }
+    
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Өзіңді тексер</h1>
+        <h1>А деңгейі</h1>
+        <div class="task">
+            <p>1. Дұрыс үшбұрышты призмаға сырттай цилиндр сызылған. Призманың биіктігі 24 см, ал бүйір жағының диагоналі 26 см. Цилиндрдің табанының радиусын табыңыз. (&radic;3 = 1,7)</p>
+            <input type="text" id="task1" placeholder="Жауабыңызды жазыңыз">
+            <div id="feedback-task1" class="feedback"></div>
+        </div>
+        <div class="task">
+            <p>2. Барлық қырлары а-ға тең дұрыс үшбұрышты призма цилиндрге іштей сызылған. Цилиндрдің осьтік қимасының ауданын табыңыз. (&radic;3 = 1,7)</p>
+            <input type="text" id="task2" placeholder="Жауабыңызды жазыңыз">
+            <div id="feedback-task2" class="feedback"></div>            
+        </div>
+        <div class="task">
+            <p>3. Осьтік қимасына іштей шеңбер сызылған конус берілген. Конустың биіктігі осы шеңбердің радиусынан 4 есе үлкен. Конустың жасаушысы 9 см-ге тең болса, конустың толық бетінің ауданын табыңыз</p>
+            <input type="text" id="task3" placeholder="Жауабыңызды жазыңыз">
+            <div id="feedback-task3" class="feedback"></div>
+        </div>
+        <div class="task">
+            <p>4. Радиусы R-ге тең шарға іштей конус сызылған, оның биіктігі мен жасаушысының арасындағы бұрыш &alpha;-ға тең. Конустың биіктігін табыңыз</p>
+            <input type="text" id="task4" placeholder="Жауабыңызды жазыңыз">
+            <div id="feedback-task4" class="feedback"></div>
+        </div>
+        <div class="task">
+            <p>5. Тетраэдр берілген және оған іштей конус сызуға болады. Тетраэдрдің табан қабырғалары 6,5 см, 7 см, 7,5 см, ал конустың жасаушысы табан жазықтығына 60&#176; бұрышпен көлбеген. Осы тетраэдрдің толық бетінің ауданын табыңыз</p>
+            <input type="text" id="task5" placeholder="Жауабыңызды жазыңыз">
+            <div id="feedback-task5" class="feedback"></div>
+        </div>
+        <div class="task">
+            <p>6. Теңқабырғалы цилиндр берілген. Оның толық бетінің ауданын цилиндрдің табанының R радиусы арқылы өрнектеңіз</p>
+            <input type="text" id="task6" placeholder="Жауабыңызды жазыңыз">
+            <div id="feedback-task6" class="feedback"></div>
+        </div>
+        <div class="task">
+            <p>7. Цилиндрдің төменгі табанының 6 дм-ге тең хордасы оның центрінен 4 дм, ал жоғарғы табанының центрінен 5 дм қашықтықта орналасқан. Цилиндрдің толық бетінің ауданын табыңыз</p>
+            <input type="text" id="task7" placeholder="Жауабыңызды жазыңыз">
+            <div id="feedback-task7" class="feedback"></div>
+        </div>
+        <div class="task">
+            <p>8. Конустың 6&radic;3 см-ге тең жасаушысы табан жазықтығымен 60&#176; бұрыш жасайды. Конустың бүйір бетінің ауданын табыңыз</p>
+            <input type="text" id="task8" placeholder="Жауабыңызды жазыңыз">
+            <div id="feedback-task8" class="feedback"></div>
+        </div>
+        <div class="task">
+            <p>9. Биіктігі 2&radic;3 см-ге тең болатын теңқабырғалы конустың толық бетінің ауданын табыңыз</p>
+            <input type="text" id="task9" placeholder="Жауабыңызды жазыңыз">
+            <div id="feedback-task9" class="feedback"></div>
+        </div>
+        <div class="task">
+            <p>10. Конустың осьтік қимасының төбесіндегі бұрышы 60&#176;-қа тең. Конустың бүйір беті жазбасының центрлік бұрышын табыңыз</p>
+            <input type="text" id="task10" placeholder="Жауабыңызды жазыңыз">
+            <div id="feedback-task10" class="feedback"></div>
+        </div>
+        <h1>В деңгейі</h1>
+        <div class="task">
+            <p>11. Қиық конустың табандарының радиустары 2 см-ге және 4 см-ге тең. Қиық конустың табандарына параллель және биіктігінің  ортасы арқылы өтетін жазықтықпен қимасының ауданын табыңыз</p>
+            <input type="text" id="task11" placeholder="Жауабыңызды жазыңыз">
+            <div id="feedback-task11" class="feedback"></div>
+        </div>
+        <div class="task">
+            <p>12. Радиусы 6 см-ге тең шар қабырғасы 4&radic;3 см-ге тең теңқабырғалы үшбұрыштың барлық қабырғаларымен жанасады. Шардың центрінен осы үшбұрышытың жазықтығына дейінгі қашықтықты табыңыз. (&radic;2 = 1,4)</p>
+            <input type="text" id="task12" placeholder="Жауабыңызды жазыңыз">
+            <div id="feedback-task12" class="feedback"></div>
+        </div>
+        <div class="task">
+            <p>13. Шаршыны оның a-ға тең қабырғасынан айналдырғанда шыққан дененің толық бетінің ауданы мен радиусы а-ға тең сфераныі ауданын салыстырыңыз</p>
+            <input type="text" id="task13" placeholder="Жауабыңызды жазыңыз">
+            <div id="feedback-task13" class="feedback"></div>
+        </div>
+        <div class="task">
+            <p>14. Радиусы 10 см шарға іштей конус сызылған, ал оған іштей сызылған пирамиданың табаны - гипотенузасы 19,2 см-ге тең тікбұрышты үшбұрыш. Осы пирамиданың биіктігін табыңыз</p>
+            <input type="text" id="task14" placeholder="Жауабыңызды жазыңыз">
+            <div id="feedback-task14" class="feedback"></div>
+        </div>
+        <div class="task">
+            <p>15. Конусқа сырттай шар, ал іштей дұрыс үшбұрышты пирамида сызылған, пирамиданың табан қабырғасы 12&radic;3 см-ге, ал бүйір қыры 20 см-ге тең. Шардың радиусын табыңыз</p>
+            <input type="text" id="task15" placeholder="Жауабыңызды жазыңыз">
+            <div id="feedback-task15" class="feedback"></div>
+        </div>
+        <div class="task">
+            <p>16. Цилиндрге бүйір жағы шаршы болатын дұрыс алтыбұрышты призма іштей сызылған. Призманың бүйір жағының диагоналі мен цилиндр осінің арасындағы бұрышты табыңыз</p>
+            <input type="text" id="task16" placeholder="Жауабыңызды жазыңыз">
+            <div id="feedback-task16" class="feedback"></div>
+        </div>
+        <h1>С деңгейі</h1>
+        <div class="task">
+            <p>17. Цилиндрге іштей тікбұрышты параллелепипед сызылған, оның табан қабырғалары 9 см және 12 см, ал бүйір қыры 20 см. Цилиндрдің жасаушысын, табанының радиусын, осьтік қимасының диагоналін табыңыз. (&radic;7 = 2,65)</p>
+            <input type="text" id="task17" placeholder="Жауабыңызды жазыңыз">
+            <div id="feedback-task17" class="feedback"></div>
+        </div>
+        <div class="task">
+            <p>18. Биіктігі 8 дм-ге, табан радиусы 6 дм-ге тең конусқа іштей сызылған цилиндрдің бүйір бетінің ең үлкен ауданын табыңыз</p>
+            <input type="text" id="task18" placeholder="Жауабыңызды жазыңыз">
+            <div id="feedback-task18" class="feedback"></div>
+        </div>
+        <div class="task">
+            <p>19. Цилиндр осімен 45&#176; бұрыш жасайтын жазықтық осьті 1 : 3 қатынасына бөледі. Цилиндрдің биіктігі 4&radic;2 см-ге тең болса, цилиндрге іштей сызылған шардың осы жазықтықпен қимасының радиусын табыңыз</p>
+            <input type="text" id="task19" placeholder="Жауабыңызды жазыңыз">
+            <div id="feedback-task19" class="feedback"></div>
+        </div>
+        <div class="task">
+            <p>20. Биіктігі 14 см-ге тең цилиндрге іштей шар сызылған. Шардың арақашықтығы 10 см болатын цилиндрдің екі жасаушысы арқылы өтетін жазықтықпен қимасының радиусын табыңыз</p>
+            <input type="text" id="task20" placeholder="Жауабыңызды жазыңыз">
+            <div id="feedback-task20" class="feedback"></div>
+        </div>
+
+
+
+
+
+        <button onclick="checkAnswers()">Тексеру</button>
+        <div id="result"></div>
+    </div>
+
+<script>
+function checkAnswers() {
+    const correctAnswers = {
+        task1: "5,88",
+        task2: "1,18a^2",
+        task3: "108",
+        task4: "2R(Cosa)^2",
+        task5: "63",
+        task6: "6piR^2",
+        task7: "240",
+        task8: "162",
+        task9: "36",
+        task10: "180",
+        task11: "27",
+        task12: "5,6",
+        task13: "аудандары тең",
+        task14: "12,8 және 7,2",
+        task15: "12,5",
+        task16: "45",
+        task17: "20; 7,5; 25",
+        task18: "72",
+        task19: "2,65",
+        task20: "5"
+    };
+
+    let allCorrect = true;
+
+    for (const taskId in correctAnswers) {
+        const input = document.getElementById(taskId);
+        const feedback = document.getElementById(`feedback-${taskId}`);
+        const studentAnswer = input ? input.value.trim() : "";
+
+        if (studentAnswer === correctAnswers[taskId]) {
+            feedback.innerHTML = "<span style='color:green;'>Жарайсың!</span>";
+        } else {
+            feedback.innerHTML = `<span style='color:red;'>Дұрыс жауап: ${correctAnswers[taskId]}</span>`;
+            allCorrect = false;
+        }
+    }
+
+   
+}
+</script>
+<script>
+  // Батырманы көрсету
+  window.onscroll = function () {
+    const btn = document.getElementById("scrollTopBtn");
+    if (document.body.scrollTop > 300 || document.documentElement.scrollTop > 300) {
+      btn.style.display = "block";
+    } else {
+      btn.style.display = "none";
+    }
+  };
+
+  // Жоғарыға көтеру функциясы
+  function scrollToTop() {
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth"
+    });
+  }
+</script>
+
+<button onclick="scrollToTop()" id="scrollTopBtn" title="Жоғарыға">∆</button>
+
+</body>
+</html>

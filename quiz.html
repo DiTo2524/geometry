@@ -1,0 +1,461 @@
+<!DOCTYPE html>
+<html lang="kk">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Қорытынды тест</title>
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+<style>
+    body {
+      font-family: Centro Sans pro; /* Қаріп түрі */
+      font-size: 24px; /* Қаріп өлшемі */
+      background: linear-gradient(to right, #e0f7fa, #ffffff); /* Оңға қарай градиентті фон */
+      margin: 0; /* Шеткі жиек жоқ */
+      padding: 20px; /* Ішкі жиек 20px */
+      color: #333; /* Мәтін түсі */
+    }
+
+    h2 {
+      text-align: center; /* Мәтінді орталау */
+      font-size: 2em; /* Қаріп өлшемі */
+      color: #006065; /* Түс */
+      margin-bottom: 30px; /* Төменгі шеткі жиек */
+      text-shadow: 1px 1px 2px #ccc; /* Мәтін көлеңкесі */
+    }
+
+    form {
+      max-width: 1400px; /* Ең үлкен ені */
+      margin: 0 auto; /* Орталау */
+      background-color: #ffffffdd; /* Жартылай мөлдір ақ фон */
+      padding: 30px; /* Ішкі жиек */
+      border-radius: 15px; /* Жиектердің дөңестігі */
+      box-shadow: 0 0 15px rgba(0, 0, 0, 0.1); /* Қорап көлеңкесі */
+    }
+
+    .question {
+      margin-bottom: 25px; /* Төменгі шеткі жиек */
+      padding: 20px; /* Ішкі жиек */
+      background: #f0f9ff; /* Ашық көгілдір фон */
+      border-left: 6px solid #4dd0e1; /* Сол жақ шеті түсті жолағы */
+      border-radius: 10px; /* Дөңгеленген жиектер */
+    }
+
+    .question label {
+      display: block; /* Блок түрінде көрсету */
+      font-weight: 600; /* Қаріптің қалыңдығы */
+      margin-bottom: 10px; /* Төменгі жиек */
+    }
+
+    .question input[type="radio"] {
+      margin-right: 8px; /* Оң жақ жиек */
+    }
+
+    .question input[type="radio"]:hover {
+      transform: scale(1.05); /* Үлкейту эффектісі */
+      transition: 0.2s ease-in-out; /* Өту уақыты мен тегістігі */
+    }
+
+
+    .submit-container {
+      text-align: right; /* Оңға туралау */
+      margin-top: 30px; /* Жоғарғы жиек */
+    }
+    .submit-button {
+      background: linear-gradient(to right, #26c6da, #00acc1); /* Градиентті фон */
+      color: white; /* Мәтін түсі */
+      border: none; /* Шекарасыз */
+      padding: 16px 32px; /* Ішкі жиек */
+      font-size: 1.3em; /* Қаріп өлшемі */
+      font-weight: bold; /* Қалың мәтін */
+      border-radius: 12px; /* Дөңгелек жиек */
+      box-shadow: 0 6px 15px rgba(0, 172, 193, 0.4); /* Көлеңке */
+      cursor: pointer; /* Тышқан көрсеткіші */
+      transition: transform 0.3s ease, box-shadow 0.3s ease; /* Өту эффектілері */
+    }
+
+    .submit-button:hover {
+      transform: scale(1.05); /* Үлкейту */
+      box-shadow: 0 8px 20px rgba(0, 172, 193, 0.6); /* Көлеңкені арттыру */
+    }
+
+    .result {
+      font-size: 24px; /* Қаріп өлшемі */
+      font-weight: bold; /* Қалың мәтін */
+      text-align: right; /* Оңға туралау */
+      display: block; /* Блок түрінде көрсету */
+      margin-top: 5px; /* Жоғарғы жиек */
+    }
+
+    .correct {
+      color: green; /* Дұрыс жауап жасыл түсте */
+    }
+
+    .incorrect {
+      color: red; /* Қате жауап қызыл түсте */
+    }
+
+    .error {
+      color: red; /* Қате жазуы қызыл түсте */
+      font-weight: bold; /* Қалың қаріп */
+    }
+@media screen and (max-width: 600px) {
+  form {
+    padding: 15px;
+  }
+
+  .question {
+    padding: 15px;
+    margin-bottom: 20px;
+  }
+
+  .submit-container {
+    display: flex;
+    justify-content: center;
+    margin-top: 30px;
+    padding-right: 0;
+  }
+
+  .submit-button {
+    background: linear-gradient(135deg, #00bcd4, #00838f);
+    color: white;
+    border: none;
+    padding: 14px 28px;
+    font-size: 1em;
+    font-weight: bold;
+    border-radius: 12px;
+    width: 100%;
+    box-shadow: 0 10px 25px rgba(0, 172, 193, 0.6);
+    cursor: pointer;
+    transition: all 0.3s ease;
+  }
+
+  .submit-button:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 25px rgba(0, 172, 193, 0.6);
+  }
+}
+#scrollTopBtn {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  z-index: 99;
+  font-size: 24px;
+  background: linear-gradient(135deg, #dca20f, #d7740a);
+  color: white;
+  border: none;
+  border-radius: 50%;
+  padding: 15px 20px;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+  cursor: pointer;
+  display: none;
+  transition: all 0.3s ease;
+}
+
+#scrollTopBtn:hover {
+  background: linear-gradient(135deg, #dca20f, #d7740a);
+  transform: scale(1.1);
+}
+</style>
+</head>
+<body>
+  <h2>Қорытынды тест</h2>
+    <form id="quizForm" onsubmit="return checkAnswers();">
+<div class="question">
+    <label>№1 Цилиндрдің осьтік қимасы - ауданы 1 дм<sup>2</sup>-қа тең шаршы. Сонда цилиндрдің табанының ауданы неге тең?</label><br>
+    <label><input type="radio" name="q1" value="A"> 0,25&pi; дм<sup>2</sup></label>
+    <label><input type="radio" name="q1" value="B"> 0,8&pi; дм<sup>2</sup></label>
+    <label><input type="radio" name="q1" value="C"> 1&pi; дм<sup>2</sup></label>
+    <label><input type="radio" name="q1" value="D"> 0,5&pi; дм<sup>2</sup></label>
+    <label><input type="radio" name="q1" value="E"> \(\frac{\pi \sqrt{2}}{2}\) дм<sup>2</sup><br></label>
+</div>
+        <div class="question">
+            <label>№2 Цилиндрдің биіктігі 6 см, ал табанының радиусы 5 см. Сонда цилиндрдің осіне параллель және одан 4 см қашықтықта өтетін цилиндрдің қимасының ауданы неге тең?</label><br>
+            <label><input type="radio" name="q2" value="A"> \(30\sqrt{2}\) см<sup>2</sup></label>
+            <label><input type="radio" name="q2" value="B"> \(24\sqrt{3}\) см<sup>2</sup></label>
+            <label><input type="radio" name="q2" value="C"> 24 см<sup>2</sup></label>
+            <label><input type="radio" name="q2" value="D"> 36 см<sup>2</sup></label>
+            <label><input type="radio" name="q2" value="E"> 30 см<sup>2</sup><br></label>
+        </div>
+        <div class="question">
+            <label>№3 Теңқабырғалы цилиндрдің жоғарғы табан шеңберінің нүктесі төменгі табан шеңберінің нүктесімен кесінді арқылы қосылған, ал осы нүктелерге жүргізілген шеңберлердің радиустарының арасындағы бұрыш 60&#176;-қа тең. Сонда цилиндрдің осімен тек осы кесіндіні қамтитын түзудің арасындағы бұрыштың тангенсі неге тең?</label>
+            <label><input type="radio" name="q3" value="A"> 1</label>
+            <label><input type="radio" name="q3" value="B"> \(\frac{1}{2}\)</label>
+            <label><input type="radio" name="q3" value="C"> \(\sqrt{3}\)</label>
+            <label><input type="radio" name="q3" value="D"> \(\frac{\sqrt{3}}{3}\)</label>
+            <label><input type="radio" name="q3" value="E"> 2<br></label>
+        </div>
+        <div class="question">
+            <label>№4 Теңқабырғалы цилиндрдің бүйір бетінің ауданы радиусы 1,5 дм-ге тең шар бетінің ауданына тең болуы үшін цилиндрдің табанының радиусы қандай болуы керек?</label><br>
+            <label><input type="radio" name="q4" value="A"> 1 дм</label>
+            <label><input type="radio" name="q4" value="B"> 2 дм</label>
+            <label><input type="radio" name="q4" value="C"> 1,5 дм</label>
+            <label><input type="radio" name="q4" value="D"> \(\sqrt{&pi;}\)</label>
+            <label><input type="radio" name="q4" value="E"> 0,5 дм<br></label>
+        </div>
+        <div class="question">
+            <label>№5 Цилиндрдің табанының ауданы 8 дм<sup>2</sup>-қа, ал осьтік қимасының ауданы 16 дм <sup>2</sup>-қа тең. Цилиндрдің толық бетінің ауданы неге тең?</label>
+            <label><input type="radio" name="q5" value="A"> 16&pi; дм<sup>2</sup></label>
+            <label><input type="radio" name="q5" value="B"> 8(&pi; + 2) дм<sup>2</sup></label>
+            <label><input type="radio" name="q5" value="C"> 16(&pi; + 1) дм<sup>2</sup></label>
+            <label><input type="radio" name="q5" value="D"> 48 дм<sup>2</sup></label>
+            <label><input type="radio" name="q5" value="E"> 65 дм<sup>2</sup><br></label>
+        </div>
+        <div class="question">
+            <label>№6 Биіктігі b-ға тең цилиндрдің осіне параллель екі қима жүргізілген, оның біреуі - ABCD шаршысы, екіншісі - қабырғалары b мен 2b-ға тең ABKH тіктөртбұрышы, қима жазықтықтарының арасындағы бұрыш 60&#176;-қа тең. Сонда С нүктесі ABK жазықтығына дейінгі қашықтық неге тең?</label>
+            <label><input type="radio" name="q6" value="A"> b</label>
+            <label><input type="radio" name="q6" value="B"> 0.5b</label>
+            <label><input type="radio" name="q6" value="C"> \(\frac{b\sqrt{3}}{2}\)</label>
+            <label><input type="radio" name="q6" value="D"> \(b\sqrt{3}\)</label>
+            <label><input type="radio" name="q6" value="E"> 1.5b<br></label>
+        </div>
+        <div class="question">
+            <label>№7 Биіктігі табанының диаметріне тең ағаш цилиндрден радиусы ең үлкен болатын шар жонылып алынған. Цилиндрдің бетінің ауданы шар бетінің ауданынан қанша пайызға үлкен?</label>
+            <label><input type="radio" name="q7" value="A"> 33\(\frac{1}{3}\)%</label>
+            <label><input type="radio" name="q7" value="B"> 20%</label>
+            <label><input type="radio" name="q7" value="C"> 10%</label>
+            <label><input type="radio" name="q7" value="D"> &asymp; 66%</label>
+            <label><input type="radio" name="q7" value="E"> &asymp; 11%<br></label>
+        </div>
+        <div class="question">
+            <label>№8 Конустың табанының ауданы 1 м<sup>2</sup>-қа тең, ал жасаушысы табанына 60&#176; бұрышпен көлбеген. Конустың бүйір бетінің ауданы неге тең?</label>
+            <label><input type="radio" name="q8" value="A"> 2 м<sup>2</sup></label>
+            <label><input type="radio" name="q8" value="B"> 1 м<sup>2</sup></label>
+            <label><input type="radio" name="q8" value="C"> 1,5 м<sup>2</sup></label>
+            <label><input type="radio" name="q8" value="D"> \(\sqrt{3}\) м<sup>2</sup></label>
+            <label><input type="radio" name="q8" value="E"> 0,75\(\sqrt{3}\) м<sup>2</sup><br></label>
+        </div>
+        <div class="question">
+            <label>№9 Теңқабырғалы конустың табанының радиусы \(\sqrt{3}\) дм-ге тең. Сонда конустың оның арасындағы бұрышы 60&#176;-қа тең екі жасаушысын қамтитын қимасының ауданы неге тең?</label>
+            <label><input type="radio" name="q9" value="A"> 3 дм<sup>2</sup></label>
+            <label><input type="radio" name="q9" value="B"> 3\(\sqrt{3}\) дм<sup>2</sup></label>
+            <label><input type="radio" name="q9" value="C"> 2\(\sqrt{3}\) дм<sup>2</sup></label>
+            <label><input type="radio" name="q9" value="D"> 5 дм<sup>2</sup></label>
+            <label><input type="radio" name="q9" value="E"> 1,5\(\sqrt{3}\) дм<sup>2</sup><br></label>
+        </div>
+        <div class="question">
+            <label>№10 Конустың биіктігінің ортасынан оның жасаушысының параллель және конустың бетін А мен В нүктелерінде қиятын түзу жүргізілген. Жасаушының ұзындығы 10 см-ге тең болса, АВ кесіндісінің ұзындығы неге тең?</label>
+            <label><input type="radio" name="q10" value="A"> 6,5 см</label>
+            <label><input type="radio" name="q10" value="B"> 8 см</label>
+            <label><input type="radio" name="q10" value="C"> 5,5 см</label>
+            <label><input type="radio" name="q10" value="D"> 5 см</label>
+            <label><input type="radio" name="q10" value="E"> 7,5 см<br><br></label>
+        </div>
+        <div class="question">
+            <label>№11 Конустың биіктігі 20 см-ге тең, ал табанының радиусы 25 см-ге тең. Конустың төбесін қамтитын қима оның табанының центрінен 12 см қашықтықта орналасқан. Осы қиманың ауданы неге тең? </label>
+            <label><input type="radio" name="q11" value="A"> 6 дм<sup>2</sup></label>
+            <label><input type="radio" name="q11" value="B"> 10 дм<sup>2</sup></label>
+            <label><input type="radio" name="q11" value="C"> 5 дм<sup>2</sup></label>
+            <label><input type="radio" name="q11" value="D"> 5\(\sqrt{2}\) дм<sup>2</sup></label>
+            <label><input type="radio" name="q11" value="E"> 3\(\sqrt{2}\) дм<sup>2</sup><br></label>
+        </div>
+        <div class="question">
+            <label>№12 Қиық конустың табандарының аудандары 4 дм<sup>2</sup> және 16 дм<sup>2</sup>. Оның біктігінің ортасынан табанына параллель қима жүргізілген. Сонда қиманың ауданы неге тең?</label>
+            <label><input type="radio" name="q12" value="A"> 8 дм<sup>2</sup></label>
+            <label><input type="radio" name="q12" value="B"> 10 дм<sup>2</sup></label>
+            <label><input type="radio" name="q12" value="C"> 6 дм<sup>2</sup></label>
+            <label><input type="radio" name="q12" value="D"> 9 дм<sup>2</sup></label>
+            <label><input type="radio" name="q12" value="E"> 7 дм<sup>2</sup><br></label>
+        </div>
+        <div class="question">
+            <label>№13 Радиусы 13 см-ге тең шардың бетіне арақашықтықтары 6 см, 8 см, 10 см болатын үш нүкте берілген. Сонда шардың центрінен осы үш нүктеден өтетін жазықтыққа дейінгі қашықтық неге тең?</label><br>
+            <label><input type="radio" name="q13" value="A"> 10 см</label>
+            <label><input type="radio" name="q13" value="B"> 12 см</label>
+            <label><input type="radio" name="q13" value="C"> 6 см</label>
+            <label><input type="radio" name="q13" value="D"> 8 см</label>
+            <label><input type="radio" name="q13" value="E"> 7 см<br></label>
+        </div>
+        <div class="question">
+            <label>№14 Радиусы 3 дм-ге тең шар қабырғасы 6 дм-ге тең теңқабырғалы үшбұрыштың барлық қабырғаларымен жанасады. Сонда шардың центрінен үшбұрыштың жазықтығына дейінгі қашықтық неге тең?</label>
+            <label><input type="radio" name="q14" value="A"> 2,5 дм</label>
+            <label><input type="radio" name="q14" value="B"> 3 дм</label>
+            <label><input type="radio" name="q14" value="C"> \(\sqrt{6}\) дм</label>
+            <label><input type="radio" name="q14" value="D"> 2\(\sqrt{2}\) дм</label>
+            <label><input type="radio" name="q14" value="E"> \(\sqrt{5}\) дм<br></label>
+        </div>
+        <div class="question">
+            <label>№15 Ромбының диагональдары 15 см және 20 см. Сфера ромбының барлық қабырғаларымен жанасады. Сфераның центрінен ромбының жазықтығына дейінгі қашықтық 8 см-ге тең болса, ондаа сфераның радиусы неге тең?</label>
+            <label><input type="radio" name="q15" value="A"> 10 см</label>
+            <label><input type="radio" name="q15" value="B"> 8\(\sqrt{2}\) см</label>
+            <label><input type="radio" name="q15" value="C"> 8,75 см</label>
+            <label><input type="radio" name="q15" value="D"> 9 см</label>
+            <label><input type="radio" name="q15" value="E"> 12 см<br></label>
+        </div>
+        <div class="question">
+            <label>№16 Сфераның радиусы 7 см. Сфераның екі перпендикуляр жазықтықпен қимасы - екі тең шеңбер, олардың ортақ хордасының 2 см-ге тең. Осы шеңберлердің радиустары неге тең?</label>
+            <label><input type="radio" name="q16" value="A"> 6 см</label>
+            <label><input type="radio" name="q16" value="B"> 4,5 см</label>
+            <label><input type="radio" name="q16" value="C"> 3\(\sqrt{2}\) см</label>
+            <label><input type="radio" name="q16" value="D"> 5 см</label>
+            <label><input type="radio" name="q16" value="E"> 4\(\sqrt{2}\) см<br></label>
+        </div>
+        <div class="question">
+            <label>№17 Конустың осьтік қимасының төбесіндегі бұрышы 2&alpha;, ал оның биіктігі 2\(\sqrt{6}\)-ге тең. Конустың арасындағы бұрышы 30&#176;-қа тең екі жасаушысын қамтитын жазықтықпен қимасының ауданы неге тең?</label>
+            <label><input type="radio" name="q17" value="A"> 0,5cos<sup>-2</sup>&alpha;</label>
+            <label><input type="radio" name="q17" value="B"> 0,5cos<sup>-1</sup>&alpha;</label>
+            <label><input type="radio" name="q17" value="C"> 0,5cos&alpha;</label>
+            <label><input type="radio" name="q17" value="D"> \(\frac{\sqrt{2}}{\cos^2 \alpha}\)</label>
+            <label><input type="radio" name="q17" value="E"> \(\frac{\sqrt{2}}{2\cos^2 \alpha}\)<br></label>
+        </div>
+        <div class="question">
+            <label>№18 Теңқабырғалы конусқа іштей дұрыс алтыбұрышты пирамида сызылған. Оның табан қырындағы екіжақты бұрышыы неге тең?</label>
+            <label><input type="radio" name="q18" value="A"> arcctg 2</label>
+            <label><input type="radio" name="q18" value="B"> arcsin 0,5</label>
+            <label><input type="radio" name="q18" value="C"> arccos 0,5</label>
+            <label><input type="radio" name="q18" value="D"> arctg 2</label>
+            <label><input type="radio" name="q18" value="E"> arctg 3<br></label>
+        </div>
+        <div class="question">
+            <label>№19 Табандарының радиустары 2 дм-ге және 1 дм-ге тең, ал жасаушысы табанына 45&#176; бұрышпен көлбеген қиық конусқа сырттай сфера сызылған. Сонда осы сфераның радиусы неге тең?</label>
+            <label><input type="radio" name="q19" value="A"> \(\sqrt{5}\) дм</label>
+            <label><input type="radio" name="q19" value="B"> 2\(\sqrt{5}\) дм</label>
+            <label><input type="radio" name="q19" value="C"> \(\sqrt{10}\) дм</label>
+            <label><input type="radio" name="q19" value="D"> 2\(\sqrt{2}\) дм</label>
+            <label><input type="radio" name="q19" value="E"> 5 дм<br></label>
+        </div>
+        <div class="question">
+            <label>№20 Конусқа іштей дұрыс үшбұрышты пирамида сызылған, оның биіктігі 20 см-ге, ал осы биіктіктің табанынан пирамиданың бүйір жағының жазықтығына дейінгі қашықтық 12 см-ге тең. Осы конусқа сырттай сызылған сфераның радиусы неге тең?</label>
+            <label><input type="radio" name="q20" value="A"> 38,5 см</label>
+            <label><input type="radio" name="q20" value="B"> 36,5 см</label>
+            <label><input type="radio" name="q20" value="C"> 34,5 см</label>
+            <label><input type="radio" name="q20" value="D"> 32,5 см</label>
+            <label><input type="radio" name="q20" value="E"> 30,5 см<br></label>
+        </div>
+
+<div id="resultContainer"></div>
+<div class="submit-container">
+  <button type="button" class="submit-button" onclick="checkAnswers()">Тексеру</button>
+</div>
+
+
+<div class="submit-container">
+  <button type="submit" class="submit-button">Қайта тапсыру</button>
+</div>
+
+<div id="results"></div>
+
+
+    </form>
+    <div id="results"></div>
+
+<script>
+function checkAnswers() {
+    const correctAnswers = {
+        q1: "A", q2: "D", q3: "B", q4: "C", q5: "C",
+        q6: "C", q7: "A", q8: "A", q9: "B", q10: "E",
+        q11: "C", q12: "D", q13: "B", q14: "C", q15: "A",
+        q16: "D", q17: "A", q18: "D", q19: "A", q20: "D"
+    };
+
+    const form = document.getElementById("quizForm");
+    if (!form) {
+        alert("Форма табылмады!");
+        return;
+    }
+
+    let total = 0;
+    let score = 0;
+
+    // Ескі нәтижелерді жою (remove() қолдамаса)
+    const oldResults = form.querySelectorAll(".result");
+    oldResults.forEach(el => {
+        if (el.remove) {
+            el.remove();
+        } else if (el.parentElement) {
+            el.parentElement.removeChild(el);
+        }
+    });
+
+    for (const [question, correct] of Object.entries(correctAnswers)) {
+        total++;
+        const radios = form.elements[question];
+        let answered = false;
+        let userAnswer = "";
+
+        // radios - NodeList немесе HTMLCollection, кейде бір элемент те болуы мүмкін
+        if (radios) {
+            if (radios.length === undefined) {
+                // Бір радио элемент болса
+                if (radios.checked) {
+                    userAnswer = radios.value;
+                    answered = true;
+                }
+            } else {
+                for (let radio of radios) {
+                    if (radio.checked) {
+                        userAnswer = radio.value;
+                        answered = true;
+                        break;
+                    }
+                }
+            }
+        }
+
+        const resultSpan = document.createElement("span");
+        resultSpan.className = "result";
+        resultSpan.style.marginLeft = "10px";
+
+        if (!answered) {
+            resultSpan.textContent = "⚠️ Жауап берілмеді";
+            resultSpan.style.color = "orange";
+        } else if (userAnswer === correct) {
+            resultSpan.textContent = "✅ Дұрыс";
+            resultSpan.style.color = "green";
+            score++;
+        } else {
+            resultSpan.textContent = "❌ Дұрыс емес";
+            resultSpan.style.color = "red";
+        }
+
+        // Соңғы радио батырманың артынан қосу
+        if (radios) {
+            let lastRadio = radios.length ? radios[radios.length - 1] : radios;
+            lastRadio.parentElement.appendChild(resultSpan);
+        }
+    }
+
+    // Нәтижені арнайы контейнерге шығару
+    const resultContainer = document.getElementById("resultContainer");
+    if (resultContainer) {
+        resultContainer.textContent = `Сіздің жинаған ұпайыңыз: ${score} / ${total}`;
+        resultContainer.style.fontWeight = "bold";
+        resultContainer.style.marginTop = "25px";
+    } else {
+        // Егер контейнер жоқ болса, форма соңына қосамыз
+        let existingScore = form.querySelector("#scoreResult");
+        if (existingScore) {
+            existingScore.textContent = `Сіздің жинаған ұпайыңыз: ${score} / ${total}`;
+        } else {
+            const scoreDiv = document.createElement("div");
+            scoreDiv.id = "scoreResult";
+            scoreDiv.style.marginTop = "25px";
+            scoreDiv.style.fontWeight = "bold";
+            scoreDiv.textContent = `Сіздің жинаған ұпайыңыз: ${score} / ${total}`;
+            form.appendChild(scoreDiv);
+        }
+    }
+}
+</script>
+<script>
+  // Батырманы көрсету
+  window.onscroll = function () {
+    const btn = document.getElementById("scrollTopBtn");
+    if (document.body.scrollTop > 300 || document.documentElement.scrollTop > 300) {
+      btn.style.display = "block";
+    } else {
+      btn.style.display = "none";
+    }
+  };
+
+  // Жоғарыға көтеру функциясы
+  function scrollToTop() {
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth"
+    });
+  }
+</script>
+
+<button onclick="scrollToTop()" id="scrollTopBtn" title="Жоғарыға">∆</button>
+
+</body>
+</html>
