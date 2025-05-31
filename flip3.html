@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="kk">
+<head>
+  <meta charset="UTF-8">
+  <title>3D FlipBook Demo</title>
+  <style>
+    #flipbook-container {
+      width: 800px;
+      height: 500px;
+      margin: auto;
+      margin-top: 50px;
+    }
+  </style>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r121/three.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/2.10.377/pdf.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/3dflipbook@1.7.0/dist/3dflipbook.min.js"></script>
+</head>
+<body>
+
+  <div id="flipbook-container"></div>
+
+  <script>
+    const flipbook = new ThreeDFlipBook({
+      pdf: 'book.pdf'
+    });
+
+    flipbook.renderTo('#flipbook-container');
+  </script>
+
+</body>
+</html>
