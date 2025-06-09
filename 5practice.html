@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="kk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Қиық конус және оның элементтері</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+	    font-size: 25px;
+            background-color: #CCFFA9;
+            margin: 20px;
+        }
+        h1, h2 {
+            text-align: center;
+            color: #333;
+        }
+        .question {
+            margin-bottom: 10px;
+        }
+		
+		.container {
+            max-width: 1400px;
+            margin: 30px auto;
+            padding: 20px;
+            background: #ffffff;
+            border-radius: 10px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+        }
+        .answer {
+            display: none;
+            margin: 10px 0;
+            padding: 10px;
+			background-color: #e6f7ff;
+            border-left: 4px solid #2196F3;
+        }
+        .button {
+            display: inline-block;
+            margin-top: 5px;
+            padding: 5px 10px;
+			font-size: 24px;
+            color: white;
+			background-color: #34495e;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .button:hover {
+            background-color: #1e88e5;
+        }
+    </style>
+    <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+</head>
+<body>
+	<div class="container">
+    <h1>5. Қиық конус және оның элементтері</h1>
+    <h2>A деңгейі</h2>
+	<table width="auto" border="0">
+  <tbody>
+    <tr>
+      <td><div class="question">
+        <p><b>1.</b> Табандарының радиустары 8 см-ге және 14 см-ге, ал жасаушысы 10 см-ге тең қиық конустың осьтік қимасының ауданын табыңыз.</p>
+        <button class="button" onclick="toggleAnswer(1)">Жауабын көру</button>
+        <div class="answer" id="answer-1">
+            <p>Жауап: 176 см<sup>2</sup></p>
+        </div>
+    </div></td>
+      <td>&nbsp;</td>
+    </tr>
+    <tr>
+      <td><div class="question">
+        <p><b>2.</b> Табандарының радиустары 3 м және 6 м-ге тең, ал жасаушысы табанына: а) 45°; ә) 30° бұрышпен көлбеген қиық конустың биіктігін табыңыз.</p>
+        <button class="button" onclick="toggleAnswer(2)">Жауабын көру</button>
+        <div class="answer" id="answer-2">
+            <p>Жауап: а) 3 м; ә) \(\sqrt{3}\) м</p>
+        </div>
+    </div></td>
+      <td>&nbsp;</td>
+    </tr>
+    <tr>
+      <td><div class="question">
+        <p><b>3.</b> Жоғарғы табаны үлкен болатын қиық конус пішіндес шелектің жасаушысы 2,5 дм, ал табандарының радиустары 1,7 дм және 1 дм. Шелектің биіктігін табыңыз.</p>
+        <button class="button" onclick="toggleAnswer(3)">Жауабын көру</button>
+        <div class="answer" id="answer-3">
+            <p>Жауап: 2,4 дм</p>
+        </div>
+    </div></td>
+      <td>&nbsp;</td>
+    </tr>
+    <tr>
+      <td><div class="question">
+        <p><b>4.</b> Қиық конустың биіктігі \(\sqrt{30}\) дм-ге тең, ал табандарының аудандары \(6&pi;\) дм² және \(24&pi;\) дм². Қиық конустың жасаушысының ұзындығын табыңыз.</p>
+        <button class="button" onclick="toggleAnswer(4)">Жауабын көру</button>
+        <div class="answer" id="answer-4">
+            <p>Жауап: 6 дм</p>
+        </div>
+    </div></td>
+      <td>&nbsp;</td>
+    </tr>
+    <tr>
+      <td><div class="question">
+        <p><b>5.</b> Қиық конустың осьтік қимасының ауданы 32 см²-ге, биіктігі жоғарғы табанының диаметріне тең, ал жасаушысы табан жазықтығымен 45° бұрыш жасайды. Қиық конустың: а) табандарының радиустарын; ә) жасаушысын табыңыз.</p>
+        <button class="button" onclick="toggleAnswer(5)">Жауабын көру</button>
+        <div class="answer" id="answer-5">
+            <p>Жауап: а) 2 см және 6 см; ә) \(4\sqrt{2}\) см</p>
+        </div>
+    </div></td>
+      <td>&nbsp;</td>
+    </tr>
+    <tr>
+      <td><div class="question">
+        <p><b>6.</b> Биіктігі 12 см-ге, төменгі табанының радиусы 8 см-ге, ал жасаушысы мен табанының арасындағы бұрыштың тангенсі 2,4-ке тең қиық конус берілген. Осы қиық конустың жоғарғы табанының ауданын табыңыз.</p>
+        <button class="button" onclick="toggleAnswer(6)">Жауабын көру</button>
+        <div class="answer" id="answer-6">
+            <p>Жауап: \(9&pi;\) см²</p>
+        </div>
+    </div></td>
+      <td>&nbsp;</td>
+    </tr>
+    <tr>
+      <td><div class="question">
+        <p><b>7.</b> Қиық конустың 16 см-ге тең жасаушысы табанына 60° бұрышпен көлбеген. Қиық конустың табандарының радиустарының қатынасы 3-ке тең болса, осы радиустарды табыңыз.</p>
+        <button class="button" onclick="toggleAnswer(7)">Жауабын көру</button>
+        <div class="answer" id="answer-7">
+            <p>Жауап: 4 см және 12 см</p>
+        </div>
+    </div></td>
+      <td>&nbsp;</td>
+    </tr>
+    <tr>
+      <td><div class="question">
+        <p><b>8.</b> Жасаушысы 20 см, жоғарғы табанының диаметрі 8 см, биіктігі 16 см болатын қиық конус пішіндес қалпақ тігілген. Басының айналымы 1 м-ге тең аққалаға осы қалпақ келе ма?</p>
+        <button class="button" onclick="toggleAnswer(8)">Жауабын көру</button>
+        <div class="answer" id="answer-8">
+            <p>Жауап: Келеді</p>
+        </div>
+    </div></td>
+      <td>&nbsp;</td>
+    </tr>
+    <tr>
+      <td><div class="question">
+        <p><b>9.</b> Биіктігі 5 м, табандарының радиустары 0,25 м және 0,09 м болатын қиық конус пішіндес бөренені биіктіктері тең үш бөлікке бөлді. Сонда шыққан қиық конус жасаушыларының ұзындықтарын 0,01 м-ге дейінгі дәлдікпен табыңыз.</p>
+        <button class="button" onclick="toggleAnswer(9)">Жауабын көру</button>
+        <div class="answer" id="answer-9">
+            <p>Жауап: &asymp; 1,67 м</p>
+        </div>
+    </div></td>
+      <td>&nbsp;</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+	
+<div class="container">
+<h2>В деңгейі</h2>
+<table width="auto" border="0">
+  <tbody>
+    <tr>
+      <td><div class="question">
+        <p><b>10.</b> Қиық конустың 8 см-ге тең жасаушысы оның төменгі табанымен 60°-қа тең бұрыш жасайды. Оның осьтік қимасының диагоналін қамтитын түзу осы бұрышты қақ бөледі. Қиық конустың табандарының радиустарын табыңыз.</p>
+        <button class="button" onclick="toggleAnswer(10)">Жауабын көру</button>
+        <div class="answer" id="answer-10">
+            <p>Жауап: 4 см және 8 см</p>
+        </div>
+    </div></td>
+      <td>&nbsp;</td>
+    </tr>
+    <tr>
+      <td><div class="question">
+        <p><b>11.</b> Конустан қиып алынған қиық конустың табандарының радиустары 18 см, 15 см және жасаушысы 9 см. Бастапқы конус жасаушысының ұзындығын табыңыз.</p>
+        <button class="button" onclick="toggleAnswer(11)">Жауабын көру</button>
+        <div class="answer" id="answer-11">
+            <p>Жауап: 54 см</p>
+        </div>
+    </div></td>
+      <td>&nbsp;</td>
+    </tr>
+    <tr>
+      <td><div class="question">
+        <p><b>12.</b> Конустың биіктігі \(\sqrt{2}\) м-ге тең. Конустан оның табанына параллель жазықтықпен қиып алынған қиық конустың табандары аудандарының қатынасы 1 : 2 болуы үшін, қима жазықтықты конустың төбесінен қандай қашықтықта жүргізу керек?</p>
+        <button class="button" onclick="toggleAnswer(12)">Жауабын көру</button>
+        <div class="answer" id="answer-12">
+            <p>Жауап: 1 м</p>
+        </div>
+    </div></td>
+      <td>&nbsp;</td>
+    </tr>
+    <tr>
+      <td><div class="question">
+        <p><b>13.</b> Қиық конустың жасаушысы l-ге тең және оның төменгі табан жазықтығына &phi; бұрышпен көлбеген. Қиық конустың табандары аудандарының қатынасы \(\frac{1}{9}\)-ге тең босла, оның табандарының радиустарын табыңыз.</p>
+        <button class="button" onclick="toggleAnswer(13)">Жауабын көру</button>
+        <div class="answer" id="answer-13">
+            <p>Жауап: R<sub>1</sub> = \(0,5l &middot; cos&phi;\), R<sub>2</sub> = \(1,5l &middot; cos&phi;\)</p>
+        </div>
+    </div></td>
+      <td>&nbsp;</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+	
+<div class="container">
+<h2>С деңгейі</h2>
+<table width="auto" border="0">
+  <tbody>
+    <tr>
+      <td><div class="question">
+        <p><b>14.</b> Қиық конустың биіктігінің ортасынан оған перпендикуляр өтетін қимасы ауданының оның диагональдары перпендикуляр болатын осьтік қимасының ауданына қатынасын табыңыз.</p>
+        <button class="button" onclick="toggleAnswer(14)">Жауабын көру</button>
+        <div class="answer" id="answer-14">
+            <p>Жауап: \(\frac{&pi;}{4}\)</p>
+        </div>
+    </div></td>
+      <td>&nbsp;</td>
+    </tr>
+    <tr>
+      <td><div class="question">
+        <p><b>15.</b> Қиық конустың осьтік қимасының ауданы S-ке тең. Конус табандарының 2&alpha;-ға тең доғаларын керетін хордалары арқылы жүргізілген қимасы оның табан жазықтығымен &phi; бұрышын жасайтын болса, осы қиманың ауданын табыңыз.</p>
+        <button class="button" onclick="toggleAnswer(15)">Жауабын көру</button>
+        <div class="answer" id="answer-15">
+            <p>Жауап: \(\frac{S &middot; sin&alpha;}{sin&phi;}\)</p>
+        </div>
+    </div></td>
+      <td>&nbsp;</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+	
+    <script>
+        function toggleAnswer(id) {
+            const answerDiv = document.getElementById(`answer-${id}`);
+            if (answerDiv.style.display === "none" || !answerDiv.style.display) {
+                answerDiv.style.display = "block";
+            } else {
+                answerDiv.style.display = "none";
+            }
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,371 @@
+<!DOCTYPE html>
+<html lang="kk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Цилиндр және оның элементтері</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+	    font-size: 25px;
+            background-color: #FF9DDF;
+            margin: 20px;
+        }
+        h1, h2 {
+            text-align: center;
+            color: #333;
+        }
+        .question {
+            margin-bottom: 10px;
+        }
+		
+		.container {
+            max-width: 1400px;
+            margin: 30px auto;
+            padding: 20px;
+            background: #ffffff;
+            border-radius: 10px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+        }
+        .answer {
+            display: none;
+            margin: 10px 0;
+            padding: 10px;
+			background-color: #e6f7ff;
+            border-left: 4px solid #2196F3;
+        }
+        .button {
+            display: inline-block;
+            margin-top: 5px;
+            padding: 5px 10px;
+			font-size: 24px;
+            color: white;
+			background-color: #34495e;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .button:hover {
+            background-color: #1e88e5;
+        }
+    </style>
+    <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+</head>
+<body>
+	<div class="container">
+    <h1>1. Цилиндр және оның элементтері</h1>
+    <h2>A деңгейі</h2>
+	<table width="auto" border="0">
+  <tbody>
+    <tr>
+      <td><div class="question">
+        <p><b>1.</b> 1-суреттегі қай төртбұрышты АВ қабырғасынан айналдырғанда теңқабырғалы цилиндр шығады?</p>
+	        <button class="button" onclick="toggleAnswer(1)">Жауабын көру</button>
+        <div class="answer" id="answer-1">
+            <p>Жауап: ә)-суретте</p>
+        </div>
+    </div></td>
+      <td><img src="practice/1.1.jpg" width="300"></td>
+    </tr>
+    <tr>
+      <td><div class="question">
+        <p><b>2.</b> Екі цилиндрдің осьтік қималары тең. Осы цилиндрлердің биіктіктері де тең болады деп ұйғаруға бола ма?</p>
+        <button class="button" onclick="toggleAnswer(2)">Жауабын көру</button>
+        <div class="answer" id="answer-2">
+            <p>Жауап: Болмайды</p>
+        </div>
+    </div></td>
+      <td>&nbsp;</td>
+    </tr>
+    <tr>
+      <td><div class="question">
+        <p><b>3.</b> Егер цилиндр жазықтықпен дөңгелегенде тіктөртбұрыш болатын із қалдырса, оның осі қандай фигураны құрайды?</p>
+        <button class="button" onclick="toggleAnswer(3)">Жауабын көру</button>
+        <div class="answer" id="answer-3">
+            <p>Жауап: Шеңбер</p>
+        </div>
+    </div></td>
+      <td><img src="practice/1.3.gif" alt="Анимациясы" width="150" height="200"></td>
+    </tr>
+    <tr>
+      <td><div class="question">
+        <p><b>4.</b> Егер ұштары цилиндрдің бүйір бетінде жататын кесінді оның осін қиып өтсе, онда ол осы осьпен қақ бөледі деген ақиқат па?</p>
+        <button class="button" onclick="toggleAnswer(4)">Жауабын көру</button>
+        <div class="answer" id="answer-4">
+            <p>Жауап: Ақиқат</p>
+        </div>
+    </div></td>
+      <td>&nbsp;</td>
+    </tr>
+    <tr>
+      <td><div class="question">
+        <p><b>5.</b> Егер тіктөртбұрыштың барлық төбелері цилиндрдің бүйір бетіне тиісті болса, онда оның қарама-қарсы қабырғаларының екеуі цилиндрдің осіне перпендикуляр болады деген ақиқат па?</p>
+        <button class="button" onclick="toggleAnswer(5)">Жауабын көру</button>
+        <div class="answer" id="answer-5">
+            <p>Жауап: Ақиқат емес, жалған</p>
+        </div>
+    </div></td>
+      <td>&nbsp;</td>
+    </tr>
+    <tr>
+      <td><div class="question">
+        <p><b>6.</b> Теңқабырғалы цилиндрдің осьтік қимасының диагоналі \(16\sqrt{2}\) см-ге тең. Цилиндр табанының радиусы неге тең?</p>
+        <button class="button" onclick="toggleAnswer(6)">Жауабын көру</button>
+        <div class="answer" id="answer-6">
+            <p>Жауап: 8 см</p>
+        </div>
+    </div></td>
+      <td><img src="practice/1.6.png" width="150"></td>
+    </tr>
+    <tr>
+      <td><div class="question">
+        <p><b>7.</b> Цилиндрдің осьтік қимасының диагоналі оның жасаушысымен 30° бұрыш жасайды, ал табанының диаметрі \(4\sqrt{3}\) см-ге тең. Цилиндрдің биіктігін табыңыз.</p>
+        <button class="button" onclick="toggleAnswer(7)">Жауабын көру</button>
+        <div class="answer" id="answer-7">
+            <p>Жауап: 12 см</p>
+        </div>
+    </div></td>
+      <td>&nbsp;</td>
+    </tr>
+    <tr>
+      <td><div class="question">
+        <p><b>8.</b> Цилиндрдің табанының радиусы 2,6 см-ге, ал жасаушысы 4,8 см-ге тең. Цилиндр осіне параллель қимасы – шаршы цилиндр осінен қандай қашықтықта орналасқан?</p>
+        <button class="button" onclick="toggleAnswer(8)">Жауабын көру</button>
+        <div class="answer" id="answer-8">
+            <p>Жауап: 1 см</p>
+        </div>
+    </div></td>
+      <td>&nbsp;</td>
+    </tr>
+    <tr>
+      <td><div class="question">
+        <p><b>9.</b> Цилиндрдің осіне параллель және одан 8 см қашықтықта орналасқан жазықтықпен қимасы – ауданы 144 см²-ге тең шаршы. Цилиндрдің табанының радиусын табыңыз.</p>
+        <button class="button" onclick="toggleAnswer(9)">Жауабын көру</button>
+        <div class="answer" id="answer-9">
+            <p>Жауап: 10 см</p>
+        </div>
+    </div></td>
+      <td>&nbsp;</td>
+    </tr>
+    <tr>
+      <td><div class="question">
+        <p><b>10.</b> Цилиндрдің биіктігі 20 см-ге, ал табанының радиусы 5 см-ге тең. Цилиндр осіне параллель және одан 1,4 см қашықтықта жатқан жазықтықпен қимасының ауданын табыңыз.</p>
+        <button class="button" onclick="toggleAnswer(10)">Жауабын көру</button>
+        <div class="answer" id="answer-10">
+            <p>Жауап: 192 см<sup>2</sup></p>
+        </div>
+    </div></td>
+      <td>&nbsp;</td>
+    </tr>
+    <tr>
+      <td><div class="question">
+        <p><b>11.</b> Цилиндрдің табанының радиусы 7 см. Цилиндрдің осіне параллель және одан 3 см қашықтықта жататын, ауданы 320 см²-ге тең қима жазықтық жүргізілген. Цилиндрдің биіктігін табыңдар.</p>
+        <button class="button" onclick="toggleAnswer(11)">Жауабын көру</button>
+        <div class="answer" id="answer-11">
+            <p>Жауап: \(8\sqrt{2}\) см</p>
+        </div>
+    </div></td>
+      <td>&nbsp;</td>
+    </tr>
+    <tr>
+      <td><div class="question">
+        <p><b>12.</b> Шаршыны 15 см-ге тең қабырғасынан айналдырып, цилиндр алынған. Цилиндрдің осіне параллель жазықтықпен қимасының ауданы 270 см²-ге тең. Цилиндр осінен қима жазықтыққа дейінгі қашықтықты табыңыз.</p>
+        <button class="button" onclick="toggleAnswer(12)">Жауабын көру</button>
+        <div class="answer" id="answer-12">
+            <p>Жауап: 12 см</p>
+        </div>
+    </div></td>
+      <td>&nbsp;</td>
+    </tr>
+    <tr>
+      <td><div class="question">
+        <p><b>13.</b> Цилиндрдің табанының радиусы 12 см-ге тең. Цилиндрдің осьтік қимасынан оған параллель және ауданы оның ауданына екі есе кіші болатын қимасына дейінгі қашықтықты табыңыз.</p>
+        <button class="button" onclick="toggleAnswer(13)">Жауабын көру</button>
+        <div class="answer" id="answer-13">
+            <p>Жауап: \(6\sqrt{3}\) см</p>
+        </div>
+    </div></td>
+      <td>&nbsp;</td>
+    </tr>
+    <tr>
+      <td><div class="question">
+        <p><b>14.</b> Цилиндрдің екі жасаушысы арқылы оның табан шеңберінен 300°-қа тең доғаны қиятын жазықтық жүргізілген. Егер цилиндрдің биіктігі 1 м-ге, табанының радиусы 1 дм-ге тең болса, цилиндрдің осы жазықтықпен қимасының ауданын табыңыз.</p>
+        <button class="button" onclick="toggleAnswer(14)">Жауабын көру</button>
+        <div class="answer" id="answer-14">
+            <p>Жауап: 10 дм<sup>2</sup></p>
+        </div>
+    </div></td>
+      <td>&nbsp;</td>
+    </tr>
+    <tr>
+      <td><div class="question">
+        <p><b>15.</b> Цилиндрдің жасаушысы – оның аудандары 15 дм²-ге және 8 дм²-ге тең екі перпендикуляр қимасының ортақ қабырғасы. Егер цилиндрдің биіктігі 5 дм-ге тең болса, оның осьтік қимасының ауданын табыңыз.</p>
+        <button class="button" onclick="toggleAnswer(15)">Жауабын көру</button>
+        <div class="answer" id="answer-15">
+            <p>Жауап: 17 дм<sup>2</sup></p>
+        </div>
+    </div></td>
+      <td>&nbsp;</td>
+    </tr>
+    <tr>
+      <td><div class="question">
+        <p><b>16.</b> Жазықтық цилиндрдің табандарын 12 см-ге және 16 см-ге тең хордалармен қиып өтеді. Хордалардың арақашықтығы 18 см-ге тең. Цилиндрдің табанының радиусы 10 см-ге тең болса, оның биіктігін табыңыз.</p>
+        <button class="button" onclick="toggleAnswer(16)">Жауабын көру</button>
+        <div class="answer" id="answer-16">
+            <p>Жауап: \(8\sqrt{2}\) см</p>
+        </div>
+    </div></td>
+      <td>&nbsp;</td>
+    </tr>
+    <tr>
+      <td><div class="question">
+        <p><b>17.</b> Цилиндрдің осіне параллель және одан 4 дм қашықтықта өтетін қиманың диагоналі цилиндрдің табанының радиусынан 2 есе ұзын. Цилиндрдің биіктігін табыңыз.</p>
+        <button class="button" onclick="toggleAnswer(17)">Жауабын көру</button>
+        <div class="answer" id="answer-17">
+            <p>Жауап: 8 дм</p>
+        </div>
+    </div></td>
+      <td>&nbsp;</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+	
+<div class="container"> 
+<h2>В деңгейі</h2>
+<table width="auto" border="0">
+  <tbody>
+    <tr>
+      <td><div class="question">
+        <p><b>18.</b> Цилиндрдің: а) симметрия центрі; ә) симметрия осі; б) симметрия жазықтығы бола ма?</p>
+        <button class="button" onclick="toggleAnswer(18)">Жауабын көру</button>
+        <div class="answer" id="answer-18">
+            <p>Жауап: а) болады; ә) болмайды; б) болады.</p>
+        </div>
+    </div></td>
+      <td>&nbsp;</td>
+    </tr>
+    <tr>
+      <td><div class="question">
+        <p><b>19.</b> Цилиндрдің жасаушысы арқылы екі қима жазықтық жүргізілген, олардың арасындағы бұрыш &beta;-ға тең. Егер цилиндрдің осы жазықтықтармен қималарының бірі осьтік болса, олардың аудандарының қатынасын табыңыз.</p>
+        <button class="button" onclick="toggleAnswer(19)">Жауабын көру</button>
+        <div class="answer" id="answer-19">
+            <p>Жауап: 2 : 1</p>
+        </div>
+    </div></td>
+      <td>&nbsp;</td>
+    </tr>
+    <tr>
+      <td><div class="question">
+        <p><b>20.</b> Цилиндр 60°-қа тең екіжақты бұрыштың ішіне орналасқан, бұрыштың жақтарында оның бір-бірден жасаушылары жатыр. Цилиндрдің табанының центрінен екіжақты бұрыштың қырына дейінгі қашықтық 15 см-ге тең. Цилиндр табанының радиусын табыңыз.</p>
+        <button class="button" onclick="toggleAnswer(20)">Жауабын көру</button>
+        <div class="answer" id="answer-20">
+            <p>Жауап: 7,5 см</p>
+        </div>
+    </div></td>
+      <td>&nbsp;</td>
+    </tr>
+    <tr>
+      <td><div class="question">
+        <p><b>21.</b> Цилиндрдің осіне параллель жазықтық табан шеңберінен 120°-қа тең доғаны қияды және осьтен d қашықтықта өтеді. Алынған қиманың диагоналі 4d-ға тең. Цилиндрдің биіктігі мен табанының радиусын табыңыз.
+</p>
+        <button class="button" onclick="toggleAnswer(21)">Жауабын көру</button>
+        <div class="answer" id="answer-21">
+            <p>Жауап: биіктігі - 2d; табанының радиусы - 2d.</p>
+        </div>
+    </div></td>
+      <td>&nbsp;</td>
+    </tr>
+    <tr>
+      <td><div class="question">
+        <p><b>22.</b> Цилиндрдің жасаушысы арқылы екі қима жазықтық жүргізілген. Алыннған қималардың аудандары \(10\sqrt{3}\) см² және \(10\sqrt{2}\) см²-ге тең. Цилиндрдің табанының радиусы 2 см-ге, ал биіктігі 5 см-ге тең болса, осы қима жазықтықтарының арасындағы бұрышты табыңыз.</p>
+        <button class="button" onclick="toggleAnswer(22)">Жауабын көру</button>
+        <div class="answer" id="answer-22">
+            <p>Жауап: 75° немесе 15°</p>
+        </div>
+    </div></td>
+      <td>&nbsp;</td>
+    </tr>
+    <tr>
+      <td><div class="question">
+        <p><b>23.</b> Цилиндр жасаушыларының бірі арқылы өтетін екі қима жазықтықтың арасындағы екіжақты бұрыш 60°-қа тең. Осы қималардың аудандары 110 см² және 130 см²-ге тең. Егер цилиндрдің биіктігі 10 см-ге тең болса, оның табанының радиусын табыңыз.</p>
+        <button class="button" onclick="toggleAnswer(23)">Жауабын көру</button>
+        <div class="answer" id="answer-23">
+            <p>Жауап: 7 см</p>
+        </div>
+    </div></td>
+      <td>&nbsp;</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+    
+<div class="container">    
+<h2>С деңгейі</h2>
+<table width="auto" border="0">
+  <tbody>
+    <tr>
+      <td><div class="question">
+        <p><b>24.</b> Цилиндрдің жасаушысы – оның аудандары S<sub>1</sub> және S<sub>2</sub>-ге тең екі перпендикуляр қимасының ортақ қабырғасы. Цилиндрдің осьтік қимасының ауданын табыңыз.</p>
+        <button class="button" onclick="toggleAnswer(24)">Жауабын көру</button>
+        <div class="answer" id="answer-24">
+            <p>Жауап: \(\sqrt{S_1^2 + S_2^2}\) </p>
+        </div>
+    </div></td>
+      <td>&nbsp;</td>
+    </tr>
+    <tr>
+      <td><div class="question">
+        <p><b>25.</b> Табан радиусы 6 см-ге, ал биіктігі 5 см-ге тең цилиндрдің бетіндегі екі нүктенің ең үлкен қашықтығын табыңыз.</p>
+        <button class="button" onclick="toggleAnswer(25)">Жауабын көру</button>
+        <div class="answer" id="answer-25">
+            <p>Жауап: 13 см</p>
+        </div>
+    </div></td>
+      <td>&nbsp;</td>
+    </tr>
+    <tr>
+      <td><div class="question">
+        <p><b>26.</b> Табанының радиусы r-ге, жасаушысы l-ге тең цилиндр берілген. Цилиндрдің табан жазықтығы мен оның табандары шеңберлерінің екі нүктесінен өтетін түзудің арасындағы ең кіші бұрышты табыңыз.</p>
+        <button class="button" onclick="toggleAnswer(26)">Жауабын көру</button>
+        <div class="answer" id="answer-26">
+            <p>Жауап: \(arctg\left(\frac{l}{2r}\right)\) </p>
+        </div>
+    </div></td>
+      <td>&nbsp;</td>
+    </tr>
+    <tr>
+      <td><div class="question">
+        <p><b>27.</b> Қыры 4 дм-ге тең куб пен табан радиусы r-ге тең цилиндр берілген (r – айнымалы шама). Цилиндрдің осі кубтың қарама-қарсы екі жағының центрлері арқылы өтеді. r-дің әрбір мәні үшін цилиндрдің куб жақтарында жататын жасаушыларының санын көрсетіңіз.</p>
+        <button class="button" onclick="toggleAnswer(27)">Жауабын көру</button>
+        <div class="answer" id="answer-27">
+            <p>Жауап: \(2\sqrt{2}\) < r немесе r < 2 болғанда - біреу де емес; <br>r = 2 немесе r = \(2\sqrt{2}\) болғанда - 4; 2 < r < \(2\sqrt{2}\) болғанда - 8 </p>
+        </div>
+    </div></td>
+      <td>&nbsp;</td>
+    </tr>
+    <tr>
+      <td><div class="question">
+        <p><b>28.</b> Биіктігі 1,9 м-ге тең үйдің еденінде цилиндрлік бөшке тұр. Егер оның табанының диаметрі 1,2 м, ал биіктігі 1,6 м болса, бөшкені бүйіріне жатқызуға бола ма?</p>
+        <button class="button" onclick="toggleAnswer(28)">Жауабын көру</button>
+        <div class="answer" id="answer-28">
+            <p>Жауап: Болмайды</p>
+        </div>
+    </div></td>
+      <td>&nbsp;</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+    <script>
+        function toggleAnswer(id) {
+            const answerDiv = document.getElementById(`answer-${id}`);
+            if (answerDiv.style.display === "none" || !answerDiv.style.display) {
+                answerDiv.style.display = "block";
+            } else {
+                answerDiv.style.display = "none";
+            }
+        }
+    </script>
+</body>
+</html>

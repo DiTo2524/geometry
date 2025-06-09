@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="kk">
+<head>
+  <meta charset="UTF-8">
+  <title>Айналу денелері — Теориялық бөлім</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    :root {
+      --menu-bg: #292c35;
+      --accent: #ffc107;
+      --text: #fff;
+      --hover-bg: #3a3d47;
+    }
+
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background: #f5f5f5;
+    }
+
+    /* Жоғарғы навигация */
+    .top-nav {
+      background: #111;
+      color: white;
+      padding: 12px 20px;
+      display: flex;
+      align-items: center;
+    }
+
+    .top-nav button {
+      background: none;
+      border: none;
+      color: white;
+      font-size: 22px;
+      cursor: pointer;
+    }
+
+    /* Сол жақ меню */
+    .side-menu {
+      position: fixed;
+      top: 0;
+      left: -280px;
+      width: 260px;
+      height: 100%;
+      background: var(--menu-bg);
+      color: var(--text);
+      transition: left 0.3s ease;
+      padding: 20px;
+      z-index: 1001;
+      box-shadow: 2px 0 12px rgba(0,0,0,0.2);
+    }
+
+    .side-menu.active {
+      left: 0;
+    }
+
+    .side-menu h3 {
+      margin-top: 0;
+      color: var(--accent);
+    }
+
+    .side-menu ul {
+      list-style: none;
+      padding: 0;
+    }
+
+    .side-menu li {
+      margin: 15px 0;
+    }
+
+    .side-menu a {
+      color: var(--text);
+      text-decoration: none;
+      display: block;
+      padding: 8px 10px;
+      border-radius: 4px;
+    }
+
+    .side-menu a:hover {
+      background: var(--hover-bg);
+    }
+
+    .close-btn {
+      background: none;
+      border: none;
+      color: var(--text);
+      font-size: 28px;
+      position: absolute;
+      top: 15px;
+      right: 15px;
+      cursor: pointer;
+    }
+
+    /* Контент */
+    main {
+      padding: 20px;
+    }
+
+    section {
+      margin-bottom: 50px;
+    }
+
+    @media (max-width: 600px) {
+      .top-nav {
+        justify-content: space-between;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Навигация -->
+  <nav class="top-nav">
+    <button onclick="toggleMenu()">☰ Теория</button>
+  </nav>
+
+  <!-- Меню -->
+  <aside class="side-menu" id="sideMenu">
+    <button class="close-btn" onclick="toggleMenu()">×</button>
+    <h3>Теория бөлімдері</h3>
+    <ul>
+      <li><a href="#section1" onclick="toggleMenu()">1. Цилиндр және оның элементтері</a></li>
+      <li><a href="#section2" onclick="toggleMenu()">2. Цилиндр бетінің ауданы</a></li>
+      <li><a href="#section3" onclick="toggleMenu()">3. Конус және оның элементтері</a></li>
+      <li><a href="#section4" onclick="toggleMenu()">4. Конус бетінің ауданы</a></li>
+      <li><a href="#section5" onclick="toggleMenu()">5. Қиық конус және оның элементтері</a></li>
+      <li><a href="#section6" onclick="toggleMenu()">6. Қиық конус бетінің ауданы</a></li>
+    </ul>
+  </aside>
+
+  <!-- Контент -->
+  <main>
+    <section id="section1"><h2>1. Цилиндр және оның элементтері</h2><p>...</p></section>
+    <section id="section2"><h2>2. Цилиндр бетінің ауданы</h2><p>...</p></section>
+    <section id="section3"><h2>3. Конус және оның элементтері</h2><p>...</p></section>
+    <section id="section4"><h2>4. Конус бетінің ауданы</h2><p>...</p></section>
+    <section id="section5"><h2>5. Қиық конус және оның элементтері</h2><p>...</p></section>
+    <section id="section6"><h2>6. Қиық конус бетінің ауданы</h2><p>...</p></section>
+  </main>
+
+  <!-- JS -->
+  <script>
+    function toggleMenu() {
+      document.getElementById("sideMenu").classList.toggle("active");
+    }
+  </script>
+
+</body>
+</html>

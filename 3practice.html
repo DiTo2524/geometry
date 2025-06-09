@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="kk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Конус және оның элементтері</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+	    font-size: 25px;
+            background-color: #A8FFE3;
+            margin: 20px;
+        }
+        h1, h2 {
+            text-align: center;
+            color: #333;
+        }
+        .question {
+            margin-bottom: 10px;
+        }
+		
+		.container {
+            max-width: 1400px;
+            margin: 30px auto;
+            padding: 20px;
+            background: #ffffff;
+            border-radius: 10px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+        }
+        .answer {
+            display: none;
+            margin: 10px 0;
+            padding: 10px;
+			background-color: #e6f7ff;
+            border-left: 4px solid #2196F3;
+        }
+        .button {
+            display: inline-block;
+            margin-top: 5px;
+            padding: 5px 10px;
+			font-size: 24px;
+            color: white;
+			background-color: #34495e;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .button:hover {
+            background-color: #1e88e5;
+        }
+    </style>
+    <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+</head>
+<body>
+	<div class="container">
+    <h1>3. Конус және оның элементтері</h1>
+    <h2>A деңгейі</h2>
+	<table width="auto" border="0">
+  <tbody>
+    <tr>
+      <td><div class="question">
+        <p><b>1.</b> Конустың табанының нүктесі мен биіктігінің ортасы арқылы түзу жүргізіп, оның конустың бүйір бетімен қиылысу нүктесін белгілеңдер.</p>
+        <button class="button" onclick="toggleAnswer(1)">Жауабын көру</button>
+        <div class="answer" id="answer-1">
+            <p>Жауап: Жазбаша жұмыс</p>
+        </div>
+    </div></td>
+      <td>&nbsp;</td>
+    </tr>
+    <tr>
+      <td><div class="question">
+        <p><b>2.</b> Табанының радиусы 12 см-ге тең конустың табанына параллель және биіктігін тең үш бөлікке бөлетін екі қима жүргізілген. Осы қималардың аудандарын табыңыз.</p>
+        <button class="button" onclick="toggleAnswer(2)">Жауабын көру</button>
+        <div class="answer" id="answer-2">
+            <p>Жауап: 16&pi; см<sup>2</sup> және 64&pi; см<sup>2</sup></p>
+        </div>
+    </div></td>
+      <td>&nbsp;</td>
+    </tr>
+    <tr>
+      <td><div class="question">
+        <p><b>3.</b> Конустың осьтік қимасы: а) гипотенузасы 12 см-ге тең тікбұрышты үшбұрыш; ә) ауданы 16\(\sqrt{3}\) см²-ге, ал бұрыштарының бірі 120°-қа тең үшбұрыш болса, конустың биіктігі мен жасаушысын табыңдар.
+</p>
+        <button class="button" onclick="toggleAnswer(3)">Жауабын көру</button>
+        <div class="answer" id="answer-3">
+            <p>Жауап: а) 6 см және 6\(\sqrt{2}\) см ; ә) 4 cм және 8 см</p>
+        </div>
+    </div></td>
+      <td>&nbsp;</td>
+    </tr>
+    <tr>
+      <td><div class="question">
+        <p><b>4.</b> Конустың төбесі арқылы табан жазықтығымен тең бұрыш жасайтын екі жазықтық жүргізілген. Конустың осы жазықтықтармен жасайтын қималары тең болады деген ақиқат па?</p>
+        <button class="button" onclick="toggleAnswer(4)">Жауабын көру</button>
+        <div class="answer" id="answer-4">
+            <p>Жауап: Ақиқат</p>
+        </div>
+    </div></td>
+      <td>&nbsp;</td>
+    </tr>
+    <tr>
+      <td><div class="question">
+        <p><b>5.</b> Конустың осьтік қимасының екі қабырғасы 4 см және 8 см. Конустың төбесі арқылы өтіп, табанынан 60° доғаны қиятын жазықтықпен қимасының ауданын табыңыз.</p>
+        <button class="button" onclick="toggleAnswer(5)">Жауабын көру</button>
+        <div class="answer" id="answer-5">
+            <p>Жауап: 3\(\sqrt{7}\) см<sup>2</sup></p>
+        </div>
+    </div></td>
+      <td>&nbsp;</td>
+    </tr>
+    <tr>
+      <td><div class="question">
+        <p><b>6.</b> Конустың осьтік қимасының бір бұрышы 90°-қа тең. Конус табанының 4\(\sqrt{3}\) см-ге тең хордасы 120°-қа тең доғаны кереді. Конустың төбесі мен осы хорда арқылы өтетін жазықтықпен қимасының ауданын табыңыз.</p>
+        <button class="button" onclick="toggleAnswer(6)">Жауабын көру</button>
+        <div class="answer" id="answer-6">
+            <p>Жауап: 4\(\sqrt{15}\) см<sup>2</sup></p>
+        </div>
+    </div></td>
+      <td>&nbsp;</td>
+    </tr>
+    <tr>
+      <td><div class="question">
+        <p><b>7.</b> Конустың осьтік қимасы мен биіктігінің ортасы арқылы табанына параллель жүргізілген қимасының аудандары, сәйкесінше, 48 см² және 9&pi; см². Конустың жасаушысы мен табан жазықтығының арасындағы бұрышты табыңыз.</p>
+        <button class="button" onclick="toggleAnswer(7)">Жауабын көру</button>
+        <div class="answer" id="answer-7">
+            <p>Жауап: &asymp; 53°</p>
+        </div>
+    </div></td>
+      <td>&nbsp;</td>
+    </tr>
+    <tr>
+      <td><div class="question">
+        <p><b>8.</b> Теңқабырғалы конустың табанының радиусы 10 см-ге тең. Конустың осьтік қимасының ауданы оның табанына параллель жазықтықпен қимасының ауданына тең болса, сол қиманың радиусын 0,1 см-ге дейінгі дәлдікпен табыңыз.</p>
+        <button class="button" onclick="toggleAnswer(8)">Жауабын көру</button>
+        <div class="answer" id="answer-8">
+            <p>Жауап: &asymp; 7,4 см</p>
+        </div>
+    </div></td>
+      <td>&nbsp;</td>
+    </tr>
+    <tr>
+      <td><div class="question">
+        <p><b>9.</b> Конустың табанының радиусы 6 см-ге тең, ал оның жасаушысы табан жазықтығына 45° бұрышпен көлбеген. Конустың биіктігі оның төбесі арқылы өтетін жазықтықпен 30° бұрыш жасайтын болса, осы қиманың ауданын табыңыз.</p>
+        <button class="button" onclick="toggleAnswer(9)">Жауабын көру</button>
+        <div class="answer" id="answer-9">
+            <p>Жауап: 24\(\sqrt{2}\) см<sup>2</sup></p>
+        </div>
+    </div></td>
+      <td>&nbsp;</td>
+    </tr>
+  </tbody>
+</table>  
+</div>
+	
+<div class="container">
+<h2>В деңгейі</h2>
+<table width="auto" border="0">
+  <tbody>
+    <tr>
+      <td><div class="question">
+        <p><b>10.</b> Конустың жасаушыларының бірі конуспен ортақ ішкі нүктелері жоқ жазықтыққа тиісті. Егер конустың жасаушысы 2,5 дм-ге, ал табанының радиусы 2 дм-ге тең болса, осы жазықтықтан конус нүктелеріне дейінгі ең үлкен қашықтық қандай?</p>
+        <button class="button" onclick="toggleAnswer(10)">Жауабын көру</button>
+        <div class="answer" id="answer-10">
+            <p>Жауап: 2,4 дм</p>
+        </div>
+    </div></td>
+      <td>&nbsp;</td>
+    </tr>
+    <tr>
+      <td><div class="question">
+        <p><b>11.</b> Екі конустың төбелері ортақ және табандарының центрлері де ортақ. Үлкен конустың табан шеңберінің нүктесінен кіші конустың табанының шеңберіне арасындағы бұрышы 60° болатын екі жанама жүргізілген. Үлкен конустың жасаушысы табан жазықтығына 45° бұрышпен көлбеген. Егер кіші конустың биіктігі 5 см-ге тең болса, оның табанының радиусын табыңыз. </p>
+        <button class="button" onclick="toggleAnswer(11)">Жауабын көру</button>
+        <div class="answer" id="answer-11">
+            <p>Жауап: 2,5 см</p>
+        </div>
+    </div></td>
+      <td>&nbsp;</td>
+    </tr>
+    <tr>
+      <td><div class="question">
+        <p><b>12.</b>1 дм-ге тең жасаушысы табан жазықтығына 45° бұрышпен көлбеген конусқа іштей сызылған кубтың қырын табыңыз.</p>
+        <button class="button" onclick="toggleAnswer(12)">Жауабын көру</button>
+        <div class="answer" id="answer-12">
+            <p>Жауап: (\(\sqrt{2}\) - 1) дм</p>
+        </div>
+    </div></td>
+      <td>&nbsp;</td>
+    </tr>
+    <tr>
+      <td><div class="question">
+        <p><b>13.</b> Конусқа іштей куб сызылған. Егер конустың биіктігінің ортасы кубтың жоғарғы табанына тиісті болса, конустың осьтік қимасының конус төбесіндегі бұрышының косинусын табыңыз.</p>
+        <button class="button" onclick="toggleAnswer(13)">Жауабын көру</button>
+        <div class="answer" id="answer-13">
+            <p>Жауап: \(\frac{1}{3}\)</p>
+        </div>
+    </div></td>
+      <td>&nbsp;</td>
+    </tr>
+    <tr>
+      <td><div class="question">
+        <p><b>14.</b> Үш жасаушысы өзара перпендикуляр, биіктігі h болатын конустың табанының ауданын табыңыз.</p>
+        <button class="button" onclick="toggleAnswer(14)">Жауабын көру</button>
+        <div class="answer" id="answer-14">
+            <p>Жауап: 2&pi;h<sup>2</sup></p>
+        </div>
+    </div></td>
+      <td>&nbsp;</td>
+    </tr>
+  </tbody>
+</table> 
+</div>
+	
+<div class="container">
+<h2>С деңгейі</h2>
+<table width="auto" border="0">
+  <tbody>
+    <tr>
+      <td><div class="question">
+        <p><b>15.</b> Конустың табанының радиусы 12 см-ге, ал оның биіктігі 8 см-ге тең. Конустың төбесін қамтитын қимасының ең үлкен ауданы қандай болады?</p>
+        <button class="button" onclick="toggleAnswer(15)">Жауабын көру</button>
+        <div class="answer" id="answer-15">
+            <p>Жауап: 104 см<sup>2</sup></p>
+        </div>
+    </div></td>
+      <td>&nbsp;</td>
+    </tr>
+    <tr>
+      <td><div class="question">
+        <p><b>16.</b> Конустың оны төбесін қамтитын ең үлкен қиимасының ауданы оның осьтік қимасының ауданынан 2 есе артық. Конустың жасаушысының табан жазықтығымен жасайтын бұрышын табыңыз.</p>
+        <button class="button" onclick="toggleAnswer(16)">Жауабын көру</button>
+        <div class="answer" id="answer-16">
+            <p>Жауап: 15°</p>
+        </div>
+    </div></td>
+      <td>&nbsp;</td>
+    </tr>
+    <tr>
+      <td><div class="question">
+        <p><b>17.</b> Конустың жасаушысы 1 м-ге тең және табан жазықтығына 45° бұрышпен көлбеген. Конусқа іштей сызылған теңқабырғалы цилиндрдің биіктігін табыңдар.</p>
+        <button class="button" onclick="toggleAnswer(17)">Жауабын көру</button>
+        <div class="answer" id="answer-17">
+            <p>Жауап: \(\frac{\sqrt{2}}{3}\)м</p>
+        </div>
+    </div></td>
+      <td>&nbsp;</td>
+    </tr>
+    <tr>
+      <td><div class="question">
+        <p><b>18.</b> Жасаушысы 1 м-ге тең теңқабырғалы конусқа іштей теңқабырғалы цилиндр сызуға бола ма? Егер болса, онда сондай цилиндрдің табанының радиусын табыңыз.</p>
+        <button class="button" onclick="toggleAnswer(18)">Жауабын көру</button>
+        <div class="answer" id="answer-18">
+            <p>Жауап: (\(\sqrt{3}\) - 1,5) м</p>
+        </div>
+    </div></td>
+      <td>&nbsp;</td>
+    </tr>
+    <tr>
+      <td><div class="question">
+        <p><b>19.</b> Конусқа қырлары тең үшбұрышты тік призма іштей сызылған. Конустың табанының радиусы R-ге, ал жасаушысының табан жазықтығына көлбеулік бұрышы 60°-қа тең. Призма қырының ұзындығын табыңыз.</p>
+        <button class="button" onclick="toggleAnswer(19)">Жауабын көру</button>
+        <div class="answer" id="answer-19">
+            <p>Жауап: \(\frac{R\sqrt{3}}{2}\)</p>
+        </div>
+    </div></td>
+      <td>&nbsp;</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+	
+    <script>
+        function toggleAnswer(id) {
+            const answerDiv = document.getElementById(`answer-${id}`);
+            if (answerDiv.style.display === "none" || !answerDiv.style.display) {
+                answerDiv.style.display = "block";
+            } else {
+                answerDiv.style.display = "none";
+            }
+        }
+    </script>
+</body>
+</html>

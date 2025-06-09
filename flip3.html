@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="kk">
+<head>
+  <meta charset="UTF-8">
+  <title>3D Кітап</title>
+  <style>
+    body {
+      background: #222;
+      margin: 0;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      font-family: sans-serif;
+      color: white;
+    }
+
+    .book {
+      position: relative;
+      width: 800px;
+      height: 500px;
+      perspective: 2000px;
+      display: flex;
+    }
+
+    .page-container {
+      width: 50%;
+      height: 100%;
+      position: relative;
+      transform-style: preserve-3d;
+    }
+
+    .side {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      backface-visibility: hidden;
+      transition: transform 1s;
+    }
+
+    .side img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .back {
+      transform: rotateY(180deg);
+    }
+
+    .flipped-left .side.front {
+      transform: rotateY(180deg);
+    }
+
+    .flipped-right .side.front {
+      transform: rotateY(-180deg);
+    }
+
+    .controls {
+      margin-top: 20px;
+    }
+
+    .controls button {
+      padding: 10px 20px;
+      margin: 0 10px;
+      font-size: 16px;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="book">
+    <div class="page-container" id="leftPage">
+      <div class="side front" id="leftFront"></div>
+      <div class="side back" id="leftBack"></div>
+    </div>
+    <div class="page-container" id="rightPage">
+      <div class="side front" id="rightFront"></div>
+      <div class="side back" id="rightBack"></div>
+    </div>
+  </div>
+
+  <div class="controls">
+    <button onclick="prevPage()">← Артқа</button>
+    <button onclick="nextPage()">Алға →</button>
+  </div>
+
+  <script>
+    const images = [
+      'theory/т1.1.JPG',
+      'theory/т1.2.JPG',
+      'theory/т1.3.JPG',
+      'theory/т2.1.JPG',
+      'theory/т2.2.JPG',
+      'theory/т2.3.JPG',
+      'theory/т3.1.JPG'
+    ];
+
+    let pageIndex = 0;
+
+    const leftPage = document.getElementById("leftPage");
+    const rightPage = document.getElementById("rightPage");
+
+    const leftFront = document.getElementById("leftFront");
+    const leftBack = document.getElementById("leftBack");
+    const rightFront = document.getElementById("rightFront");
+    const rightBack = document.getElementById("rightBack");
+
+    function updatePages() {
+      // remove flip first
+      leftPage.classList.remove("flipped-left");
+      rightPage.classList.remove("flipped-right");
+
+      // set content
+      if (pageIndex === 0) {
+        leftFront.innerHTML = "";
+        leftBack.innerHTML = "";
+        rightFront.innerHTML = `<img src="${images[0]}">`;
+        rightBack.innerHTML = `<img src="${images[1] || ''}">`;
+        return;
+      }
+
+      leftFront.innerHTML = `<img src="${images[pageIndex - 1] || ''}">`;
+      leftBack.innerHTML = `<img src="${images[pageIndex] || ''}">`;
+
+      rightFront.innerHTML = `<img src="${images[pageIndex + 1] || ''}">`;
+      rightBack.innerHTML = `<img src="${images[pageIndex + 2] || ''}">`;
+
+      setTimeout(() => {
+        leftPage.classList.add("flipped-left");
+        rightPage.classList.add("flipped-right");
+      }, 10);
+    }
+
+    function nextPage() {
+      if (pageIndex + 2 < images.length) {
+        pageIndex += 2;
+        updatePages();
+      }
+    }
+
+    function prevPage() {
+      if (pageIndex - 2 >= 0) {
+        pageIndex -= 2;
+        updatePages();
+      } else {
+        pageIndex = 0;
+        updatePages();
+      }
+    }
+
+    // Инициализация
+    updatePages();
+  </script>
+
+</body>
+</html>

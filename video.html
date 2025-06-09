@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="kk">
+<head>
+  <meta charset="UTF-8">
+  <title>Видеосабақтар</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+	  font-size: 24px;
+      margin: 0;
+      padding: 0;
+      background: #f2f9f7;
+      color: #222;
+    }
+    header {
+      background-color: #009688;
+      color: white;
+      padding: 20px;
+      text-align: center;
+      font-size: 2em;
+      letter-spacing: 1px;
+    }
+    .container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* 3 баған */
+    grid-template-rows: repeat(2, auto);   /* 2 қатар */
+    gap: 20px;
+    padding: 20px;
+	width: 100%;           /* экранға бейімделеді */
+    max-width: 1100px;     /* бірақ 1100px-ден аспайды */
+    height: 450px;          /* мазмұнға қарай созылады */
+    margin: 0 auto;        /* ортасына қояды */
+  }
+  .card {
+    background: #fff;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    padding: 10px;
+    text-align: center;
+    transition: transform 0.3s;
+  }
+  .card:hover {
+    transform: translateY(-5px);
+  }
+
+    }
+    .card h3 {
+      color: #009688;
+    }
+    .card a {
+      display: inline-block;
+      margin-top: 10px;
+      background: #009688;
+      color: white;
+      padding: 10px 16px;
+      border-radius: 8px;
+      text-decoration: none;
+      font-weight: bold;
+      transition: background 0.3s;
+    }
+    .card a:hover {
+      background: #00796b;
+    }
+  </style>
+</head>
+<body>
+
+  <header>📚 Менің видеосабақтарым</header>
+
+  <div class="container">
+
+    <div class="card">
+      <h3>1-сабақ: Цилиндр және оның элементтері</h3>
+      <a href="https://youtu.be/ONQKz5NY-gI?si=62iU-SDeWVuwlkE8" target="_blank">Қарау ▶</a>
+    </div>
+
+    <div class="card">
+      <h3>2-сабақ: Цилиндр бетінің ауданы</h3>
+      <a href="https://youtu.be/QdnkCBxhSDk?si=8G-RssGjG4TnLKl_" target="_blank">Қарау ▶</a>
+    </div>
+
+    <div class="card">
+      <h3>3-сабақ: Конус және оның элементтері</h3>
+      <a href="https://youtu.be/uJqyXkLEfl8?si=cp8-_rvTACzQ7abY" target="_blank">Қарау ▶</a>
+    </div>
+
+    <div class="card">
+      <h3>4-сабақ: Конус бетінің ауданы</h3>
+      <a href="https://youtu.be/IktVG430ALU?si=RFcwN-S49YIJjuB5" target="_blank">Қарау ▶</a>
+    </div>
+
+    <div class="card">
+      <h3>5-сабақ: Қиық конус және оның элементтері</h3>
+      <a href="https://youtu.be/pY7yrCFHS_c?si=wZL_D2mMkAh2QcJ3" target="_blank">Қарау ▶</a>
+    </div>
+
+    <div class="card">
+      <h3>6-сабақ: Қиық конус бетінің ауданы</h3>
+      <a href="https://youtu.be/WqlFJfWd-ZA?si=zUvU0H56lDo7q8DW" target="_blank">Қарау ▶</a>
+    </div>
+
+  </div>
+
+</body>
+</html>

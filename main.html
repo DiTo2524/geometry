@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="kk">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Басты бет | Менің Академиям</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background-color: #f8fafc;
+      color: #1a202c;
+    }
+
+    header {
+      background-color: #0f172a;
+      color: white;
+      padding: 20px 40px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    header h1 {
+      font-size: 24px;
+      margin: 0;
+    }
+
+	td {
+      font-size: 20px;      
+    }
+	  
+    nav a {
+      color: white;
+      margin-left: 20px;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    .hero {
+      background-color: #e2e8f0;
+      padding: 60px 40px;
+      text-align: center;
+    }
+
+    .hero h2 {
+      font-size: 36px;
+      margin-bottom: 20px;
+    }
+
+    .hero p {
+      font-size: 20px;
+      max-width: 600px;
+      margin: 0 auto;
+    }
+
+    .cta {
+      margin-top: 30px;
+    }
+
+    .cta a {
+      background-color: #2563eb;
+      color: white;
+      padding: 12px 24px;
+      text-decoration: none;
+      font-size: 18px;
+      border-radius: 6px;
+      transition: background 0.3s;
+    }
+
+    .cta a:hover {
+      background-color: #1d4ed8;
+    }
+
+    .features {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 30px;
+      justify-content: center;
+      margin: 40px;
+    }
+
+    .feature-card {
+      background: white;
+      padding: 30px;
+      border-radius: 10px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+      width: 340px;
+      text-align: center;
+    }
+
+    .feature-card h3 {
+      margin-bottom: 10px;
+    }
+
+    footer {
+      background-color: #0f172a;
+      color: white;
+      text-align: center;
+      padding: 20px;
+      margin-top: 40px;
+    }
+  </style>
+</head>
+<body>
+
+
+  <section class="hero">
+    <h2>Жаңа сабаққа шақырамыз!</h2>
+    <p><strong>"Айналу денелері және оның қасиеттері"</strong>. Бұл сабақта айналу денелерінің математикалық қасиеттері мен геометриялық ерекшеліктерін терең зерттейміз.</p>
+    <div class="cta">
+      <a href="theory.html" target="content">Бастау</a>
+    </div>
+  </section>
+
+  <section class="features">
+    <div class="feature-card">
+      <h3>Интерактивті сабақтар</h3>
+      <p>Тақырыптарды бейнематериалдар және тесттер арқылы меңгеріңіз.</p>
+    </div>
+    <div class="feature-card">
+      <h3><a href="slide.html" target="content">Қорғау жұмысы</a></h3>
+      <p>"Айналу денелеріне берілген тақырыптарды оқытуға сайт құру"</p>
+	  <a href="slide/Di diplom.pdf" target="blank">.</a>
+    </div>
+    <div class="feature-card">
+      <h3>Автор жайлы</h3>
+      <p>МиИ-21-1к тобының студенті Төлегенқызы Д.<br> Жетекшісі: аға оқытушы Сейтимбетова А.Б.</p>
+    </div>
+  </section>
+
+<!-- Пікір қалдыру жәшігі -->
+<section class="comment-section">
+  <h3>Пікіріңіз біз үшін маңызды!</h3>
+  <p>Сайт туралы ойыңызбен бөлісіңіз немесе ұсыныс қалдырыңыз:</p>
+  
+  <form id="commentForm">
+    <input type="text" id="userName" placeholder="Аты-жөніңіз..." required>
+    <textarea id="commentText" placeholder="Мұнда өз пікіріңізді жазыңыз..." required></textarea>
+    <button type="submit">Жіберу</button>
+  </form>
+
+  <div id="commentList"></div>
+</section>
+
+<style>
+.comment-section {
+  max-width: 600px;
+  margin: 0 auto 60px;
+  padding: 30px;
+  background-color: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.05);
+  font-family: 'Segoe UI', sans-serif;
+}
+
+.comment-section h3 {
+  font-size: 24px;
+  margin-bottom: 10px;
+  color: #1e293b;
+}
+
+.comment-section p {
+  font-size: 16px;
+  margin-bottom: 20px;
+  color: #475569;
+}
+
+#commentForm input[type="text"],
+#commentForm textarea {
+  width: 100%;
+  padding: 12px;
+  font-size: 16px;
+  border-radius: 8px;
+  border: 1px solid #cbd5e1;
+  margin-bottom: 12px;
+  transition: 0.3s;
+}
+
+#commentForm input:focus,
+#commentForm textarea:focus {
+  outline: none;
+  border-color: #3b82f6;
+  box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.2);
+}
+
+#commentForm button {
+  background-color: #2563eb;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  font-size: 16px;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+#commentForm button:hover {
+  background-color: #1e40af;
+}
+
+#commentList {
+  margin-top: 20px;
+}
+
+.comment-item {
+  background-color: #f1f5f9;
+  padding: 12px;
+  margin-bottom: 10px;
+  border-left: 4px solid #3b82f6;
+  border-radius: 6px;
+}
+
+.comment-item strong {
+  display: block;
+  margin-bottom: 4px;
+  color: #1e3a8a;
+}
+</style>
+
+<script>
+document.getElementById('commentForm').addEventListener('submit', function(event) {
+  event.preventDefault();
+  const commentText = document.getElementById('commentText').value.trim();
+  const userName = document.getElementById('userName').value.trim();
+
+  if (commentText !== '' && userName !== '') {
+    const commentList = document.getElementById('commentList');
+    const newComment = document.createElement('div');
+    newComment.className = 'comment-item';
+    newComment.innerHTML = `<strong>${userName}</strong>${commentText}`;
+    commentList.prepend(newComment);
+    document.getElementById('commentText').value = '';
+    document.getElementById('userName').value = '';
+  }
+});
+</script>
+	
+	
+  <footer>
+
+	  <table width="auto" border="0">
+  <tbody>
+    <tr>
+	  <td>Әлеуметтік желілер</td>
+      <td><a href="https://wa.me/77006479116" target="_blank">
+  <img src="wApp.png" alt="whatsapp" style="width: 50px;">
+	</a>
+	</td>
+      <td><a href="https://www.instagram.com/tolegenkyzyy__?igsh=bjJrc2NwcDQ2em1q" target="_blank">
+  <img src="insta.png" alt="insta" style="width: 50px;">
+	</a>
+	</td>
+      <td><a href="https://t.me/+77006479116" target="_blank">
+  <img src="tele.png" alt="insta" style="width: 50px;">
+	</a>
+	</td>
+      <td><a href="https://vk.com/id485879787" target="_blank">
+  <img src="vk.png" alt="insta" style="width: 50px;">
+	</a></td>
+      <td>Пошта</td>
+      <td><a href="https://dilnaz25022004@gmail.com" target="_blank">
+  <img src="gmail.png" alt="insta" style="width: 50px;">
+	</a></td>
+      <td><a href="https://dilnaz25022004@mail.ru" target="_blank">
+  <img src="mailru.png" alt="insta" style="width: 50px;">
+	</a></td>      
+    </tr>
+  </tbody>
+</table>
+	
+	<hr>  
+    &copy; 2025 DI ACADEMY. Барлық құқықтар қорғалған.
+  </footer>
+
+</body>
+</html>

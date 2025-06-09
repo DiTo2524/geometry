@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="kk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Конус бетінің ауданы</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+	    font-size: 25px;
+            background-color: #FFD99C;
+            margin: 20px;
+        }
+        h1, h2 {
+            text-align: center;
+            color: #333;
+        }
+        .question {
+            margin-bottom: 10px;
+        }
+		
+		.container {
+            max-width: 1400px;
+            margin: 30px auto;
+            padding: 20px;
+            background: #ffffff;
+            border-radius: 10px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+        }
+        .answer {
+            display: none;
+            margin: 10px 0;
+            padding: 10px;
+			background-color: #e6f7ff;
+            border-left: 4px solid #2196F3;
+        }
+        .button {
+            display: inline-block;
+            margin-top: 5px;
+            padding: 5px 10px;
+			font-size: 24px;
+            color: white;
+			background-color: #34495e;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .button:hover {
+            background-color: #1e88e5;
+        }
+    </style>
+    <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+</head>
+<body>
+	<div class="container">
+    <h1>4. Конус бетінің ауданы</h1>
+    <h2>A деңгейі</h2>
+	<table width="auto" border="0">
+  <tbody>
+    <tr>
+      <td><div class="question">
+        <p><b>1.</b> Конустың бүйір бетінің ауданы табанының ауданына тең болуы мүмкін бе?</p>
+        <button class="button" onclick="toggleAnswer(1)">Жауабын көру</button>
+        <div class="answer" id="answer-1">
+            <p>Жауап: Мүмкін емес</p>
+        </div>
+    </div></td>
+      <td>&nbsp;</td>
+    </tr>
+    <tr>
+      <td><div class="question">
+        <p><b>2.</b> Цилиндр мен конустың табандарының радиустары мен биіктіктері тең. Олардың бүйір беттерінің аудандары тең болуы мүмкін бе?</p>
+        <button class="button" onclick="toggleAnswer(2)">Жауабын көру</button>
+        <div class="answer" id="answer-2">
+            <p>Жауап: Мүмкін</p>
+        </div>
+    </div></td>
+      <td>&nbsp;</td>
+    </tr>
+    <tr>
+      <td><div class="question">
+        <p><b>3.</b> Теңқабырғалы конустың табанының, бүйір бетінің және толық бетінің аудандары қандай қатынаста болады?</p>
+        <button class="button" onclick="toggleAnswer(3)">Жауабын көру</button>
+        <div class="answer" id="answer-3">
+            <p>Жауап: 1 : 2 : 3</p>
+        </div>
+    </div></td>
+      <td>&nbsp;</td>
+    </tr>
+    <tr>
+      <td><div class="question">
+        <p><b>4.</b> Конустың биіктігі 8 дм-ге, ал табанының радиусы 6 дм-ге тең болса, оның бүйір бетінің ауданын табыңыз.</p>
+        <button class="button" onclick="toggleAnswer(4)">Жауабын көру</button>
+        <div class="answer" id="answer-4">
+            <p>Жауап: 60&pi; дм <sup>2</sup></p>
+        </div>
+    </div></td>
+      <td>&nbsp;</td>
+    </tr>
+    <tr>
+      <td><div class="question">
+        <p><b>5.</b> Конустың жасаушысы табан жазықтығымен 45° бұрыш жасаса, ал биіктігі 4 дм-ге тең болса, оның бүйір бетінің ауданын табыңыз.</p>
+        <button class="button" onclick="toggleAnswer(5)">Жауабын көру</button>
+        <div class="answer" id="answer-5">
+            <p>Жауап: 16\(&pi;\sqrt{2}\) дм<sup>2</sup></p>
+        </div>
+    </div></td>
+      <td>&nbsp;</td>
+    </tr>
+    <tr>
+      <td><div class="question">
+        <p><b>6.</b> Мұнараның шатыры конус пішіндес. Шатырдың биіктігі 1,5 м, ал мұнара табанының диаметрі 4 м. Шатырдың толық бетінің ауданын 0,1 м²-ге дейінгі дәлдікпен табыңыз.</p>
+        <button class="button" onclick="toggleAnswer(6)">Жауабын көру</button>
+        <div class="answer" id="answer-6">
+            <p>Жауап: &asymp; 15,7 м<sup>2</sup></p>
+        </div>
+    </div></td>
+      <td>&nbsp;</td>
+    </tr>
+    <tr>
+      <td><div class="question">
+        <p><b>7.</b> Бүйір бетінің жазбасы жарты дөңгелек болатын конустың осьтік қимасының төбесіндегі бұрышты табыңыз.</p>
+        <button class="button" onclick="toggleAnswer(7)">Жауабын көру</button>
+        <div class="answer" id="answer-7">
+            <p>Жауап: 60°</p>
+        </div>
+    </div></td>
+      <td>&nbsp;</td>
+    </tr>
+    <tr>
+      <td><div class="question">
+        <p><b>8.</b> Конустың бүйір бетінің ауданы оның табанының ауданынан үш есе үлкен. Конустың жасаушысының табан жазықтығына көлбеулік бұрышын табыңыз.</p>
+        <button class="button" onclick="toggleAnswer(8)">Жауабын көру</button>
+        <div class="answer" id="answer-8">
+            <p>Жауап: &asymp; 71°</p>
+        </div>
+    </div></td>
+      <td>&nbsp;</td>
+    </tr>
+    <tr>
+      <td><div class="question">
+        <p><b>9.</b> Сектордың радиусы 6 дм, ал бұрышы 120°. Секторды орап, конустың бет жасаған. Конустың табанының радиусын табыңыз.</p>
+        <button class="button" onclick="toggleAnswer(9)">Жауабын көру</button>
+        <div class="answer" id="answer-9">
+            <p>Жауап: 2 дм<sup>2</sup></p>
+        </div>
+    </div></td>
+      <td>&nbsp;</td>
+    </tr>
+    <tr>
+      <td><div class="question">
+        <p><b>10.</b> Конустың толық бетінің ауданы 27&pi;, ал бүйір бетінің ауданы 18&pi; болса, оның бүйір беті жазбасының центрлік бұрышын табыңыз.</p>
+        <button class="button" onclick="toggleAnswer(10)">Жауабын көру</button>
+        <div class="answer" id="answer-10">
+            <p>Жауап: 180°</p>
+        </div>
+    </div></td>
+      <td>&nbsp;</td>
+    </tr>
+    <tr>
+      <td><div class="question">
+        <p><b>11.</b> Конустың жасаушысы 5 см, ал толық бетінің ауданы 24&pi; см² болса, оның бүйір беті жазбасының центрлік бұрышын табыңыз.</p>
+        <button class="button" onclick="toggleAnswer(11)">Жауабын көру</button>
+        <div class="answer" id="answer-11">
+            <p>Жауап: 216°</p>
+        </div>
+    </div></td>
+      <td>&nbsp;</td>
+    </tr>
+    <tr>
+      <td><div class="question">
+        <p><b>12.</b> Конус тәрізді қаңылтыр құйғыштың табанының диаметрі 10 см, ал биіктігі 12 см болуы керек. Оның дайындамасының өлшемдерін (конустың бүйір бетінің жазбасы секторының бұрышы мен радиусын) табыңыз.</p>
+        <button class="button" onclick="toggleAnswer(12)">Жауабын көру</button>
+        <div class="answer" id="answer-12">
+            <p>Жауап: 13 см және (138\(\frac{6}{13}\))°</p>
+        </div>
+    </div></td>
+      <td>&nbsp;</td>
+    </tr>
+    <tr>
+      <td><div class="question">
+        <p><b>13.</b> Конустың биіктігі 6 дм, ал бүйір бетінің ауданы табанының ауданынан екі есе үлкен болса, оның осьтік қимасының ауданын табыңыз.</p>
+        <button class="button" onclick="toggleAnswer(13)">Жауабын көру</button>
+        <div class="answer" id="answer-13">
+            <p>Жауап: 12\(\sqrt{3}\) дм<sup>2</sup></p>
+        </div>
+    </div></td>
+      <td>&nbsp;</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+		
+<div class="container">
+<h2>В деңгейі</h2>
+<table width="auto" border="0">
+  <tbody>
+    <tr>
+      <td><div class="question">
+        <p><b>14.</b> Бүйір қабырғасы 8 см, табанындағы бұрышы 60° болатын теңбүйірлі үшбұрышты бүйір қабырғасынан айналдырғанда шығатын айналу денесінің бетінің ауданын табыңыз.</p>
+        <button class="button" onclick="toggleAnswer(14)">Жауабын көру</button>
+        <div class="answer" id="answer-14">
+            <p>Жауап: 64\(&pi;\sqrt{3}\) cм<sup>2</sup></p>
+        </div>
+    </div></td>
+      <td>&nbsp;</td>
+    </tr>
+    <tr>
+      <td><div class="question">
+        <p><b>15.</b> Катеттері 6 см және 8 см болатын тікбұрышты үшбұрышты гипотенузасынан айналдырғанда шығатын айналу денесінің бетінің ауданын табыңыз.</p>
+        <button class="button" onclick="toggleAnswer(15)">Жауабын көру</button>
+        <div class="answer" id="answer-15">
+            <p>Жауап: 67,2&pi; cм<sup>2</sup></p>
+        </div>
+    </div></td>
+      <td>&nbsp;</td>
+    </tr>
+    <tr>
+      <td><div class="question">
+        <p><b>16.</b> Қабырғасы 4 см-ге, бұрышы 30°-қа тең ромбыны: а) оның қабырғасынан; ә) оның кіші диагоналінен айналдырғанда шыққан дене бетінің ауданын табыңыз.</p>
+        <button class="button" onclick="toggleAnswer(16)">Жауабын көру</button>
+        <div class="answer" id="answer-16">
+            <p>Жауап: 32&pi; cм<sup>2</sup>; 8\(&pi;(\sqrt{6} + \sqrt{2})\) см<sup>2</sup></p>
+        </div>
+    </div></td>
+      <td>&nbsp;</td>
+    </tr>
+    <tr>
+      <td><div class="question">
+        <p><b>17.</b> Теңқабырғалы конусқа іштей дұрыс алтыбұрышты пирамида сызылған. Пирамиданың табан қырындағы екіжақты бұрышты табыңыз.</p>
+        <button class="button" onclick="toggleAnswer(17)">Жауабын көру</button>
+        <div class="answer" id="answer-17">
+            <p>Жауап: arctg 2</p>
+        </div>
+    </div></td>
+      <td>&nbsp;</td>
+    </tr>
+    <tr>
+      <td><div class="question">
+        <p><b>18.</b> Конусқа іштей табан қабырғасы а-ға және көршілес бүйір қырларының арасындағы бұрышы 30°-қа тең болатын дұрыс төртбұрышты пирамида салынған. Конустые биіктігін табыңыз.</p>
+        <button class="button" onclick="toggleAnswer(18)">Жауабын көру</button>
+        <div class="answer" id="answer-18">
+            <p>Жауап: \(\frac{a}{2} \sqrt{6 + 4\sqrt{3}}\)</p>
+        </div>
+    </div></td>
+      <td>&nbsp;</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+	
+<div class="container">
+<h2>С деңгейі</h2>
+<table width="auto" border="0">
+  <tbody>
+    <tr>
+      <td><div class="question">
+        <p><b>19.</b> Биіктігі 12 дм-ге, табан радиусы 5 дм-ге тең конусқа іштей сызылған цилиндрдің бүйір бетінің ең үлкен ауданын табыңыз.</p>
+        <button class="button" onclick="toggleAnswer(19)">Жауабын көру</button>
+        <div class="answer" id="answer-19">
+            <p>Жауап: 30&pi; дм<sup>2</sup></p>
+        </div>
+    </div></td>
+      <td>&nbsp;</td>
+    </tr>
+    <tr>
+      <td><div class="question">
+        <p><b>20.</b> Конустың табан радиусының оның биіктігіне қатынасы \(1 : \sqrt{2}\). Осы конусқа іштей сызылған дұрыс үшбұрышты пирамиданың бүйір жақтарының арасындағы бұрышты табыңыз.</p>
+        <button class="button" onclick="toggleAnswer(20)">Жауабын көру</button>
+        <div class="answer" id="answer-20">
+            <p>Жауап: arcsin\(\frac{2\sqrt{2}}{3}\)</p> 
+        </div>
+    </div></td>
+      <td>&nbsp;</td>
+    </tr>
+    <tr>
+      <td><div class="question">
+        <p><b>21.</b> Конусқа іштей табан қабырғасы а-ға және көршілес бүйір қырларының арасындағы бұрышы 30°-қа тең болатын дұрыс төртбұрышты пирамида салынған. Конустың биіктігін табыңыз.</p>
+        <button class="button" onclick="toggleAnswer(21)">Жауабын көру</button>
+        <div class="answer" id="answer-21">
+            <p>Жауап: h = \(\frac{10}{3}\)(\(\sqrt{6}\) + \(\sqrt{2}\)); R = \(\frac{10}{3}\)(\(\sqrt{6}\) - \(\sqrt{2}\))</p>
+        </div>
+    </div></td>
+      <td>&nbsp;</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+	
+    <script>
+        function toggleAnswer(id) {
+            const answerDiv = document.getElementById(`answer-${id}`);
+            if (answerDiv.style.display === "none" || !answerDiv.style.display) {
+                answerDiv.style.display = "block";
+            } else {
+                answerDiv.style.display = "none";
+            }
+        }
+    </script>
+</body>
+</html>

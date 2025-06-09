@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="kk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Цилиндр бетінің ауданы</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+	    font-size: 25px;
+            background-color: #98F1FF;
+            margin: 20px;
+        }
+        h1, h2 {
+            text-align: center;
+            color: #333;
+        }
+        .question {
+            margin-bottom: 10px;
+        }
+		
+		.container {
+            max-width: 1400px;
+            margin: 30px auto;
+            padding: 20px;
+            background: #ffffff;
+            border-radius: 10px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+        }
+        .answer {
+            display: none;
+            margin: 10px 0;
+            padding: 10px;
+			background-color: #e6f7ff;
+            border-left: 4px solid #2196F3;
+        }
+        .button {
+            display: inline-block;
+            margin-top: 5px;
+            padding: 5px 10px;
+			font-size: 24px;
+            color: white;
+			background-color: #34495e;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .button:hover {
+            background-color: #1e88e5;
+        }
+    </style>
+    <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+</head>
+<body>
+	<div class="container">
+    <h1>2. Цилиндр бетінің ауданы</h1>
+    <h2>A деңгейі</h2>
+	<table width="auto" border="0">
+  <tbody>
+    <tr>
+      <td><div class="question">
+        <p><b>1.</b> 2-суретінде қайсысының табан радиусы 3-ке, жасаушысы 6-ға тең цилиндрдің бүйір беті жазбасының кескіні болатынын көрсетіңіз:</p>
+        <br><button class="button" onclick="toggleAnswer(1)">Жауабын көру</button>
+        <div class="answer" id="answer-1">
+            <p>Жауап: б)-суретте</p>
+        </div>
+    </div></td>
+      <td><img src="practice/2.1.jpeg" width="300"></td>
+    </tr>
+    <tr>
+      <td><div class="question">
+        <p><b>2.</b> Бүйір бетінің ауданы табандары аудандарының қосындысына тең цилиндр бар бола ма? Жауабын түсіндіріңіз</p>
+        <button class="button" onclick="toggleAnswer(2)">Жауабын көру</button>
+        <div class="answer" id="answer-2">
+            <p>Жауап: Болады</p>
+        </div>
+    </div></td>
+      <td>&nbsp;</td>
+    </tr>
+    <tr>
+      <td><div class="question">
+        <p><b>3.</b> Қабырғалары 6 см-ге және 8 см-ге тең тіктөртбұрышты оның: а) кіші қабырғасынан; ә) үлкен қабырғасынан айналдырғанда шыққан дененің толық бетінің ауданын табыңыз.</p>
+        <button class="button" onclick="toggleAnswer(3)">Жауабын көру</button>
+        <div class="answer" id="answer-3">
+            <p>Жауап: а) 224&pi; см<sup>2</sup>; ә) 168&pi; см<sup>2</sup></p>
+        </div>
+    </div></td>
+      <td>&nbsp;</td>
+    </tr>
+    <tr>
+      <td><div class="question">
+        <p><b>4.</b> Цилиндрдің осьтік қимасының диагоналі \(10\sqrt{2}\) см-ге тең және жасаушымен 45° бұрыш жасайды. Цилиндрдің толық бетінің ауданын табыңыз.</p>
+        <button class="button" onclick="toggleAnswer(4)">Жауабын көру</button>
+        <div class="answer" id="answer-4">
+            <p>Жауап: \(150&pi;cм^2\)</p>
+        </div>
+    </div></td>
+      <td>&nbsp;</td>
+    </tr>
+    <tr>
+      <td><div class="question">
+        <p><b>5.</b> Цилиндрдің табанының ауданы &pi; дм²-ге, ал осьтік қимасының ауданы 2 дм²-ге тең. Цилиндрдің толық бетінің ауданын табыңыз.</p>
+        <button class="button" onclick="toggleAnswer(5)">Жауабын көру</button>
+        <div class="answer" id="answer-5">
+            <p>Жауап: 4&pi; дм<sup>2</sup></p>
+        </div>
+    </div></td>
+      <td>&nbsp;</td>
+    </tr>
+    <tr>
+      <td><div class="question">
+        <p><b>6.</b> Теңқабырғалы цилиндрдің биіктігі h-қа тең болса, оның толық бетінің ауданын табыңыз.</p>
+        <button class="button" onclick="toggleAnswer(6)">Жауабын көру</button>
+        <div class="answer" id="answer-6">
+            <p>Жауап: \(\frac{3}{2}\)&pi;h<sup>2</sup></p>
+        </div>
+    </div></td>
+      <td>&nbsp;</td>
+    </tr>
+    <tr>
+      <td><div class="question">
+        <p><b>7.</b> Теңқабырғалы цилиндрдің толық бетінің ауданы: а) 12&pi; м²-ге; ә) қыры 2 м-ге тең кубтың бетінің ауданына тең болса, оның табанының радиусы қандай болуы керек?</p>
+        <button class="button" onclick="toggleAnswer(7)">Жауабын көру</button>
+        <div class="answer" id="answer-7">
+            <p>Жауап: а) \(\sqrt{2}\) м; ә) \(\frac{2}{\sqrt{&pi;}}\) м</p>
+        </div>
+    </div></td>
+      <td>&nbsp;</td>
+    </tr>
+    <tr>
+      <td><div class="question">
+        <p><b>8.</b> Бүйір бетінің ауданы 16&pi; дм²-ге тең теңқабырғалы цилиндрдің толық бетінің ауданын табыңыз.</p>
+        <button class="button" onclick="toggleAnswer(8)">Жауабын көру</button>
+        <div class="answer" id="answer-8">
+            <p>Жауап: 24&pi; дм<sup>2</sup></p>
+        </div>
+    </div></td>
+      <td>&nbsp;</td>
+    </tr>
+    <tr>
+      <td><div class="question">
+        <p><b>9.</b> Өлшемдері \(\sqrt{\frac{6}{&pi;}}\) дм және \(\sqrt{\frac{24}{&pi;}}\) дм болатын тіктөртбұрыш – әртүрлі екі цилиндрлің бүйір беттерінің жазбасы. Олардың толық беттері аудандарының айырымын табыңыз.</p>
+        <button class="button" onclick="toggleAnswer(9)">Жауабын көру</button>
+        <div class="answer" id="answer-9">
+            <p>Жауап: \(\frac{9}{&pi;^2}\) дм<sup>2</sup></p>
+        </div>
+    </div></td>
+      <td>&nbsp;</td>
+    </tr>
+    <tr>
+      <td><div class="question">
+        <p><b>10.</b> Цилиндрдің: а) бүйір бетінің жазбасы – қабырғасы 1 дм-ге тең шаршы болса; ә) бүйір беті жазбасының диагоналі жасаушымен 60°-қа тең бұрыш жасаса, ал цилиндрдің биіктігі 2 дм-ге тең болса, оның толық бетінің ауданын табыңыз.</p>
+        <button class="button" onclick="toggleAnswer(10)">Жауабын көру</button>
+        <div class="answer" id="answer-10">
+            <p>Жауап: а) (\(\frac{1}{2&pi;}\) + 1) дм<sup>2</sup>; ә) (\(\frac{6}{&pi;}\) + \(4\sqrt{3}\)) дм<sup>2</sup></p>
+        </div>
+    </div></td>
+      <td>&nbsp;</td>
+    </tr>
+    <tr>
+      <td><div class="question">
+        <p><b>11.</b> Цилиндрдің осіне параллель жазықтыпен қимасы оның табанындағы шеңберден 90°-қа тең доғаны қияды. Қиманың диагоналі цилиндрдің 4 см-ге тең радиусынан екі есе үлкен. Цилиндрдің толық бетінің ауданын табыңыз. </p>
+        <button class="button" onclick="toggleAnswer(11)">Жауабын көру</button>
+        <div class="answer" id="answer-11">
+            <p>Жауап: \(32&pi;(1 + \sqrt{2})\) см<sup>2</sup></p>
+        </div>
+    </div></td>
+      <td>&nbsp;</td>
+    </tr>
+    <tr>
+      <td><div class="question">
+        <p><b>12.</b>Биіктігі 30 см-ге тең теңқабырғалы цилиндр пішіндес 20 шелек жасау үшін, оның тігісіне бүйір бетінің ауданының 1%-ы кететін болса, 9 м² қаңылтыр жете ме?</p>
+        <button class="button" onclick="toggleAnswer(12)">Жауабын көру</button>
+        <div class="answer" id="answer-12">
+            <p>Жауап: Жетеді</p>
+        </div>
+    </div></td>
+      <td>&nbsp;</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+   
+<div class="container"> 
+<h2>В деңгейі</h2>
+<table width="auto" border="0">
+  <tbody>
+    <tr>
+      <td><div class="question">
+        <p><b>13.</b> Цилиндрдің бүйір беті ауданының оның осьтік қимасының ауданына қатынасы неге тең?</p>
+        <button class="button" onclick="toggleAnswer(13)">Жауабын көру</button>
+        <div class="answer" id="answer-13">
+            <p>Жауап: \(&pi;\)</p>
+        </div>
+    </div></td>
+      <td>&nbsp;</td>
+    </tr>
+    <tr>
+      <td><div class="question">
+        <p><b>14.</b> Цилиндр табанының және осьтік қимасының аудандары, сәйкесінше, Q және S-ке тең болса, оның толық бетінің ауданын табыңыз.</p>
+        <button class="button" onclick="toggleAnswer(14)">Жауабын көру</button>
+        <div class="answer" id="answer-14">
+            <p>Жауап: 2Q + &pi;S</p>
+        </div>
+    </div></td>
+      <td>&nbsp;</td>
+    </tr>
+    <tr>
+      <td><div class="question">
+        <p><b>15.</b> Дұрыс үшбұрышты пирамиданың бүйір қыры \(9\sqrt{2}\) см-ге тең және табан жазықтығымен 45° бұрыш жасайды. Осы пирамидаға іштей сызылған теңқабырғалы цилиндрдің биіктігін табыңдар.</p>
+        <button class="button" onclick="toggleAnswer(15)">Жауабын көру</button>
+        <div class="answer" id="answer-15">
+            <p>Жауап: 4,5 см</p>
+        </div>
+    </div></td>
+      <td>&nbsp;</td>
+    </tr>
+    <tr>
+      <td><div class="question">
+        <p><b>16.</b> Пирамиданың табаны – қабырғасы а-ға тең дұрыс үшбұрыш. Пирамиданың екі бүйір жағы табанына перпендикуляр, ал үшіншісі онымен &alpha; бұрыш жасайды. Пирамидаға биіктігі табанының радиусына тең цилиндр іштей сызылған. Цилиндрдің табанының радиусын табыңыз.</p>
+        <button class="button" onclick="toggleAnswer(16)">Жауабын көру</button>
+        <div class="answer" id="answer-16">
+            <p>Жауап: \(\frac{a\sqrt{3} &middot; tg&alpha;}{2(3tg&alpha; + 1)}\)</p>
+        </div>
+    </div></td>
+      <td>&nbsp;</td>
+    </tr>
+    <tr>
+      <td><div class="question">
+        <p><b>17.</b> Қыры b-ға тең ОАВС дұрыс тетраэдрі мен цилиндр былай орналасқан: тетраэдрдің О төбесі – цилиндрдің бір табанының центрі, ал А, В, С төбелерің оның екінші табанының шеңберінде жатыр. Цилиндрдің толық бетінің ауданын табыңыз.
+</p>
+        <button class="button" onclick="toggleAnswer(17)">Жауабын көру</button>
+        <div class="answer" id="answer-17">
+            <p>Жауап: \(\frac{2 + 2\sqrt{2}}{3}&pi;b^2\)</p>
+        </div>
+    </div></td>
+      <td>&nbsp;</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+    
+<div class="container"> 
+<h2>C деңгейі</h2>
+<table width="auto" border="0">
+  <tbody>
+    <tr>
+      <td><div class="question">
+        <p><b>18.</b> Цилиндрдің осьтік қимасының периметрі Р. Егер цилиндрдің бүйір бетінің ауданы ең үлкен болса, оның биіктігі мен табанының радиусын табыңдар.</p>
+        <button class="button" onclick="toggleAnswer(18)">Жауабын көру</button>
+        <div class="answer" id="answer-18">
+            <p>Жауап: h = \(\frac{P}{4}\); R = \(\frac{P}{8}\)</p>
+        </div>
+    </div></td>
+      <td>&nbsp;</td>
+    </tr>
+    <tr>
+      <td><div class="question">
+        <p><b>19.</b> Табанының диаметрі d-ға тең цилиндр берілген. Цилиндрдің бүйір бетінің қимасы – эллипс, оның жазықтығы табан жазықтығына 30° бұрышпен көлбеген. Цилиндрдің осы жазықтықпен қимасының ауданын табыңыз.</p>
+        <button class="button" onclick="toggleAnswer(19)">Жауабын көру</button>
+        <div class="answer" id="answer-19">
+            <p>Жауап: \(\frac{&pi;d^2}{2\sqrt{3}}\)</p>
+        </div>
+    </div></td>
+      <td>&nbsp;</td>
+    </tr>
+    <tr>
+      <td><div class="question">
+        <p><b>20.</b> Цилиндр мен дұрыс EABCDF октаэдрі былай орналасқан: октаэдрдің E және F төбелері – цилиндр табанының центрлері, ал A, B, C, D төбелері цилиндрдің бетіне тиісті (3-сурет). Егер октаэдрдің қабырғасы а-ға тең болса, цилиндрдің толық бетінің ауданын табыңыз.</p>
+<br><img src="practice/2.20.jpg" width="150"><br>
+        <button class="button" onclick="toggleAnswer(20)">Жауабын көру</button>
+        <div class="answer" id="answer-20">
+            <p>Жауап: \(3&pi;a^2\)</p>
+        </div>
+    </div></td>
+      <td>&nbsp;</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+    <script>
+        function toggleAnswer(id) {
+            const answerDiv = document.getElementById(`answer-${id}`);
+            if (answerDiv.style.display === "none" || !answerDiv.style.display) {
+                answerDiv.style.display = "block";
+            } else {
+                answerDiv.style.display = "none";
+            }
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="kk">
+<head>
+  <meta charset="UTF-8">
+  <title>3D Фото-кітап</title>
+  <style>
+    body {
+      background: #222;
+      margin: 0;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      font-family: sans-serif;
+    }
+
+    .book {
+      width: 800px;
+      height: 500px;
+      position: relative;
+      perspective: 2000px;
+    }
+
+    .page {
+      width: 50%;
+      height: 100%;
+      background: white;
+      position: absolute;
+      top: 0;
+      left: 0;
+      transform-origin: left;
+      transform-style: preserve-3d;
+      transition: transform 1s;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+    }
+
+    .page img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .page.flipped {
+      transform: rotateY(-180deg);
+      z-index: 0;
+    }
+
+    .page:not(.flipped) {
+      z-index: 1;
+    }
+
+    .controls {
+      margin-top: 20px;
+    }
+
+    .controls button {
+      padding: 10px 20px;
+      margin: 0 10px;
+      font-size: 16px;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="book" id="book">
+    <div class="page"><img src="theory/т1.1.JPG" alt="1-бет"></div>
+    <div class="page"><img src="theory/т1.2.JPG" alt="2-бет"></div>
+    <div class="page"><img src="theory/т1.3.JPG" alt="3-бет"></div>
+    <div class="page"><img src="theory/т2.1.JPG" alt="4-бет"></div>
+    <div class="page"><img src="theory/т2.2.JPG" alt="5-бет"></div>
+    <div class="page"><img src="theory/т2.3.JPG" alt="6-бет"></div>
+  </div>
+
+  <div class="controls">
+    <button onclick="prevPage()">← Артқа</button>
+    <button onclick="nextPage()">Алға →</button>
+  </div>
+
+  <script>
+  const pages = document.querySelectorAll('.page');
+  let currentPage = 0;
+
+  // Расставляем z-index по убыванию
+  pages.forEach((page, index) => {
+    page.style.zIndex = pages.length - index;
+  });
+
+  function nextPage() {
+    if (currentPage < pages.length) {
+      pages[currentPage].classList.add('flipped');
+      currentPage++;
+    }
+  }
+
+  function prevPage() {
+    if (currentPage > 0) {
+      currentPage--;
+      pages[currentPage].classList.remove('flipped');
+    }
+  }
+</script>
+
+</body>
+</html>
